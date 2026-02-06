@@ -1020,7 +1020,13 @@ a:hover { color: #60a5fa; }
   color: var(--color-text-heading);
 }
 
-/* Language visibility */
-[lang="en"] { display: none; }
-html[data-lang="en"] [lang="en"] { display: revert; }
-html[data-lang="en"] [lang="ja"] { display: none; }
+/* Language visibility — scoped to body descendants to avoid hiding <html> itself */
+body [lang="en"] { display: none; }
+html[data-lang="en"] body [lang="en"] { display: revert; }
+html[data-lang="en"] body [lang="ja"] { display: none; }
+
+/* Footer address */
+.footer-address {
+  font-size: .75rem;
+  color: var(--color-text-light);
+}
