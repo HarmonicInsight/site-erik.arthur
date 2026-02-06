@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>瀬田博之 | ITコンサルティング・Web開発</title>
-  <meta name="description" content="瀬田博之 個人事業 - ITコンサルティング、Webアプリケーション開発、システム構築を提供します。">
+  <title>Erik Arthur | ビジネスアプリケーションクリエーター - Harmonic Insight</title>
+  <meta name="description" content="Erik Arthur - Business Application Creator. 28+ years of IT & business reform experience. Developing AI-powered business applications. Based in Tokyo.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
   <header class="header">
     <div class="container header-inner">
       <a href="#" class="logo">
-        <span class="logo-mark">H</span>
+        <span class="logo-mark">HI</span>
         <span class="logo-text">Harmonic Insight</span>
       </a>
       <nav class="nav">
@@ -24,251 +24,480 @@
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-list">
-          <li><a href="#about">事業概要</a></li>
-          <li><a href="#services">事業内容</a></li>
-          <li><a href="#portfolio">実績</a></li>
-          <li><a href="#info">事業者情報</a></li>
-          <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+          <li><a href="#about"><span lang="ja">プロフィール</span><span lang="en">About</span></a></li>
+          <li><a href="#products"><span lang="ja">プロダクト</span><span lang="en">Products</span></a></li>
+          <li><a href="#portfolio"><span lang="ja">開発実績</span><span lang="en">Portfolio</span></a></li>
+          <li><a href="#services"><span lang="ja">事業内容</span><span lang="en">Services</span></a></li>
+          <li><a href="#contact" class="nav-cta"><span lang="ja">お問い合わせ</span><span lang="en">Contact</span></a></li>
         </ul>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="ja">JP</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
       </nav>
     </div>
   </header>
 
   <!-- ヒーロー -->
   <section class="hero">
-    <div class="container">
-      <p class="hero-label">IT Consulting &amp; Software Development</p>
-      <h1 class="hero-title">テクノロジーで<br>ビジネスの可能性を拡げる</h1>
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <p class="hero-label">Business Application Creator</p>
+      <h1 class="hero-title">
+        <span lang="ja">テクノロジーと洞察で<br>ビジネスに変革を</span>
+        <span lang="en">Transforming Business<br>Through Technology &amp; Insight</span>
+      </h1>
       <p class="hero-sub">
-        Webアプリケーション開発・システム構築・ITコンサルティングを通じて、<br class="pc-only">
-        お客様の課題解決とビジネス成長を支援いたします。
+        <span lang="ja">
+          28年以上のIT・業務改革経験を活かし、<br class="pc-only">
+          AI活用ビジネスアプリケーションの企画・開発で<br class="pc-only">
+          お客様のビジネス課題を解決します。
+        </span>
+        <span lang="en">
+          Leveraging 28+ years of IT and business reform experience<br class="pc-only">
+          to solve business challenges through AI-powered<br class="pc-only">
+          application development.
+        </span>
       </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">お問い合わせ</a>
-        <a href="#services" class="btn btn-outline">事業内容を見る</a>
+        <a href="#products" class="btn btn-primary">
+          <span lang="ja">プロダクトを見る</span><span lang="en">View Products</span>
+        </a>
+        <a href="#about" class="btn btn-outline">
+          <span lang="ja">プロフィール</span><span lang="en">About Me</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number">28+</span>
+          <span class="hero-stat-label"><span lang="ja">年のIT経験</span><span lang="en">Years in IT</span></span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">100+</span>
+          <span class="hero-stat-label"><span lang="ja">開発プロジェクト</span><span lang="en">Dev Projects</span></span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">~40</span>
+          <span class="hero-stat-label"><span lang="ja">冊の著書</span><span lang="en">Books Published</span></span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">6</span>
+          <span class="hero-stat-label"><span lang="ja">言語・プラットフォーム</span><span lang="en">Languages/Platforms</span></span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 事業概要 -->
+  <!-- プロフィール -->
   <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title">事業概要</h2>
+      <h2 class="section-title"><span lang="ja">プロフィール</span><span lang="en">Profile</span></h2>
       <p class="section-subtitle">About</p>
       <div class="about-content">
-        <div class="about-text">
-          <p>
-            Harmonic Insightは、瀬田博之が運営する個人事業です。
-            Webアプリケーション開発、モバイルアプリ開発、業務システム構築、AIツール開発など、
-            幅広いIT分野で企業・個人のお客様を支援しています。
-          </p>
-          <p>
-            TypeScript、Python、C#を中心としたフルスタック開発の技術力と、
-            LINE・Microsoft Teams・Slackなどの企業向けプラットフォーム連携の経験を活かし、
-            お客様のニーズに合った最適なソリューションを提供いたします。
-          </p>
-          <p>
-            また、教育プラットフォームの構築やAI画像生成ツールの開発など、
-            先端技術を活用したプロダクト開発にも積極的に取り組んでおります。
-          </p>
+        <div class="about-main">
+          <div class="about-header">
+            <div class="about-avatar">EA</div>
+            <div class="about-intro">
+              <h3>Erik Arthur<span class="about-name-jp"><span lang="ja">エリック・アーサー</span></span></h3>
+              <p class="about-role"><span lang="ja">ビジネスアプリケーションクリエーター</span><span lang="en">Business Application Creator</span></p>
+              <p class="about-org"><span lang="ja">ハーモニックインサイト（Harmonic Insight）代表 / 東京</span><span lang="en">Harmonic Insight, Principal / Tokyo, Japan</span></p>
+            </div>
+          </div>
+          <div class="about-text">
+            <span lang="ja">
+              <p>
+                28年以上にわたるIT業界・業務改革の経験を持つビジネスアプリケーションクリエーターです。
+                本業ではFPT Consulting Japanにてディレクターとして建設業DXコンサルティングに従事しながら、
+                副業として個人事業「ハーモニックインサイト」を運営し、AI活用ビジネスアプリケーションの企画・開発を行っています。
+              </p>
+              <p>
+                Windows デスクトップ、Web アプリケーション、モバイルアプリ（Android/iOS）、AI/RPA ツールまで、
+                100を超えるプロジェクトを手がけ、C#、TypeScript、Python、Kotlin、Swift など幅広い技術スタックで開発。
+                Kindleにて約40冊の著書を出版し、技術知見の共有にも積極的に取り組んでいます。
+              </p>
+            </span>
+            <span lang="en">
+              <p>
+                Business Application Creator with 28+ years of experience in IT and business transformation.
+                As Director at FPT Consulting Japan, I lead construction industry DX consulting,
+                while running Harmonic Insight as a side business focused on AI-powered business application development.
+              </p>
+              <p>
+                I have developed over 100 projects spanning Windows desktop, web, mobile (Android/iOS), and AI/RPA tools,
+                using a broad technology stack including C#, TypeScript, Python, Kotlin, and Swift.
+                I have also published approximately 40 books on Kindle, actively sharing technical knowledge.
+              </p>
+            </span>
+          </div>
         </div>
-        <div class="about-stats">
-          <div class="stat-card">
-            <span class="stat-number">3+</span>
-            <span class="stat-label">対応言語・フレームワーク</span>
+        <div class="about-sidebar">
+          <div class="credential-card">
+            <h4><span lang="ja">資格・認定</span><span lang="en">Certifications</span></h4>
+            <ul class="credential-list">
+              <li>
+                <span class="credential-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></span>
+                PMP <span lang="ja">（プロジェクトマネジメントプロフェッショナル）</span><span lang="en">(Project Management Professional)</span>
+              </li>
+              <li>
+                <span class="credential-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></span>
+                Google <span lang="ja">データアナリスト</span><span lang="en">Data Analytics</span>
+              </li>
+              <li>
+                <span class="credential-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></span>
+                <span lang="ja">英検準1級</span><span lang="en">EIKEN Pre-1st Grade (English)</span>
+              </li>
+            </ul>
           </div>
-          <div class="stat-card">
-            <span class="stat-number">6+</span>
-            <span class="stat-label">開発プロジェクト実績</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">End-to-End</span>
-            <span class="stat-label">企画から運用まで一貫対応</span>
+          <div class="credential-card">
+            <h4><span lang="ja">キャリア</span><span lang="en">Career</span></h4>
+            <ul class="credential-list">
+              <li>
+                <span class="credential-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+                FPT Consulting Japan <span lang="ja">ディレクター</span><span lang="en">Director</span>
+              </li>
+              <li>
+                <span class="credential-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+                <span lang="ja">建設業DXコンサルティング</span><span lang="en">Construction DX Consulting</span>
+              </li>
+              <li>
+                <span class="credential-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+                Harmonic Insight <span lang="ja">代表</span><span lang="en">Principal</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 事業内容 -->
-  <section id="services" class="section section-alt">
+  <!-- フラッグシッププロダクト -->
+  <section id="products" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">事業内容</h2>
-      <p class="section-subtitle">Services</p>
-      <div class="services-grid">
+      <h2 class="section-title">Insight Series</h2>
+      <p class="section-subtitle">Flagship Products</p>
+      <p class="section-description">
+        <span lang="ja">業務の深い理解とAI技術を融合した、Harmonic Insight の主力プロダクト群</span>
+        <span lang="en">Core products combining deep business understanding with AI technology</span>
+      </p>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>
-            </svg>
-          </div>
-          <h3>Webアプリケーション開発</h3>
-          <p>フロントエンドからバックエンドまで、モダンな技術スタックを用いたWebアプリケーションの設計・開発・運用を行います。TypeScript / React / Next.js を中心に、スケーラブルなシステムを構築します。</p>
+      <div class="products-grid">
+        <div class="product-card product-featured">
+          <div class="product-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8h4"/><path d="M7 11h2"/></svg></div>
+          <div class="product-badges"><span class="product-badge">C#</span><span class="product-badge">Python</span><span class="product-badge badge-released">Released v1.0</span></div>
+          <h3>InsightSlide</h3>
+          <p><span lang="ja">PowerPointファイルのテキスト抽出・解析ツール。スライド構造を保持したまま高精度でテキストを抽出し、翻訳準備やテキストマイニングに活用。</span><span lang="en">PowerPoint text extraction and analysis tool. Extracts text with high accuracy while preserving slide structure for translation prep and text mining.</span></p>
+          <ul class="product-features">
+            <li><span lang="ja">PowerPointテキスト高精度抽出</span><span lang="en">High-accuracy PowerPoint text extraction</span></li>
+            <li><span lang="ja">スライド構造の解析・保持</span><span lang="en">Slide structure analysis & preservation</span></li>
+            <li><span lang="ja">バッチ処理対応</span><span lang="en">Batch processing support</span></li>
+          </ul>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
-            </svg>
-          </div>
-          <h3>モバイルアプリ開発</h3>
-          <p>iOS・Android対応のモバイルアプリケーションを開発します。教育プラットフォームやビジネスツールなど、ユーザー体験を重視した設計で、ビジネスの成長を支援します。</p>
+        <div class="product-card product-featured">
+          <div class="product-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></div>
+          <div class="product-badges"><span class="product-badge">C#</span><span class="product-badge">.NET 8</span><span class="product-badge">AI</span></div>
+          <h3>HarmonicDoc</h3>
+          <p><span lang="ja">AI搭載のWord文書アシスタント。Claude AIとの連携により、文書の作成・編集・要約を支援するインテリジェントなドキュメントツール。</span><span lang="en">AI-powered Word document assistant. Intelligent document tool that supports writing, editing, and summarizing with Claude AI integration.</span></p>
+          <ul class="product-features">
+            <li><span lang="ja">AI文書作成・編集支援</span><span lang="en">AI writing & editing assistance</span></li>
+            <li><span lang="ja">Claude API連携</span><span lang="en">Claude API integration</span></li>
+            <li><span lang="ja">テンプレート管理</span><span lang="en">Template management</span></li>
+          </ul>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-            </svg>
-          </div>
-          <h3>システム構築・API連携</h3>
-          <p>LINE、Microsoft Teams、Slackなどの企業向けプラットフォームとのAPI連携や、業務効率化のためのシステム構築を行います。既存システムとの統合もお任せください。</p>
+        <div class="product-card product-featured">
+          <div class="product-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="product-badges"><span class="product-badge">C#</span><span class="product-badge">WPF</span><span class="product-badge">Claude AI</span></div>
+          <h3>HarmonicSheet</h3>
+          <p><span lang="ja">シニア向けの統合オフィスアプリ。文書・表計算・メールを一画面に集約し、音声入出力やClaude AI連携で、80歳以上の方でも直感的に操作可能。</span><span lang="en">Integrated office app for seniors. Combines documents, spreadsheets, and email in one screen with voice I/O and Claude AI, designed for users aged 80+.</span></p>
+          <ul class="product-features">
+            <li><span lang="ja">文書・表計算・メール統合</span><span lang="en">Docs, spreadsheets & email unified</span></li>
+            <li><span lang="ja">音声入出力・高コントラスト</span><span lang="en">Voice I/O & high contrast mode</span></li>
+            <li><span lang="ja">Claude AI作文支援</span><span lang="en">Claude AI writing assistance</span></li>
+          </ul>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-            </svg>
-          </div>
-          <h3>AI・自動化ツール開発</h3>
-          <p>AI画像生成、自動エラー修正、PDFからのスライド自動生成など、最新のAI技術を活用した業務効率化ツールの開発を行います。Pythonを中心に、実用的なソリューションを提供します。</p>
+        <div class="product-card product-featured">
+          <div class="product-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/><rect x="1" y="1" width="22" height="22" rx="2"/></svg></div>
+          <div class="product-badges"><span class="product-badge">TypeScript</span><span class="product-badge">Next.js</span></div>
+          <h3>InsightBI</h3>
+          <p><span lang="ja">IT企業・建設業向けBIダッシュボード。売上・粗利・プロジェクト状況をリアルタイムで可視化し、拠点別・セグメント別の分析と受注予測を提供。</span><span lang="en">BI dashboard for IT/construction firms. Real-time visualization of sales, margins, and project status with branch/segment analysis and order forecasting.</span></p>
+          <ul class="product-features">
+            <li><span lang="ja">KPIリアルタイム可視化</span><span lang="en">Real-time KPI visualization</span></li>
+            <li><span lang="ja">拠点別・セグメント別分析</span><span lang="en">Branch & segment analysis</span></li>
+            <li><span lang="ja">収益性マトリクス・リスク検知</span><span lang="en">Profitability matrix & risk detection</span></li>
+          </ul>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <h3>ITコンサルティング</h3>
-          <p>技術選定、システムアーキテクチャ設計、開発プロセスの改善など、IT戦略に関するコンサルティングを提供します。お客様のビジネス目標に最適な技術的アプローチをご提案します。</p>
+        <div class="product-card product-featured">
+          <div class="product-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8"/><path d="M8 13h6"/></svg></div>
+          <div class="product-badges"><span class="product-badge">TypeScript</span><span class="product-badge">Live2D</span><span class="product-badge">AI</span></div>
+          <h3>Interview Insight</h3>
+          <p><span lang="ja">Live2Dキャラクターが対話を通じて知識を抽出するAIインタビューツール。業務調査の自動化とナレッジの構造化を実現。</span><span lang="en">AI interview tool using Live2D characters to extract knowledge through dialogue. Automates business surveys and structures knowledge.</span></p>
+          <ul class="product-features">
+            <li><span lang="ja">Live2D対話型インターフェース</span><span lang="en">Live2D conversational interface</span></li>
+            <li><span lang="ja">AI知識抽出・構造化</span><span lang="en">AI knowledge extraction & structuring</span></li>
+            <li><span lang="ja">業務調査自動化</span><span lang="en">Automated business survey</span></li>
+          </ul>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-            </svg>
-          </div>
-          <h3>教育・研修サービス</h3>
-          <p>1on1教育プラットフォームの開発運営経験を活かし、プログラミング教育やIT研修サービスを提供します。個人・法人問わず、ご要望に応じたカリキュラムで対応いたします。</p>
+        <div class="product-card product-featured">
+          <div class="product-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="product-badges"><span class="product-badge">TypeScript</span><span class="product-badge badge-released">Construction DX</span></div>
+          <h3>Sales Insight</h3>
+          <p><span lang="ja">建設業界向けの営業パイプライン管理ツール。案件の進捗管理、受注予測、営業活動の可視化により、営業効率の最大化を実現。</span><span lang="en">Sales pipeline management for construction. Maximizes sales efficiency through project tracking, order forecasting, and activity visualization.</span></p>
+          <ul class="product-features">
+            <li><span lang="ja">パイプライン管理</span><span lang="en">Pipeline management</span></li>
+            <li><span lang="ja">受注予測・分析</span><span lang="en">Order forecasting & analytics</span></li>
+            <li><span lang="ja">営業活動ダッシュボード</span><span lang="en">Sales activity dashboard</span></li>
+          </ul>
         </div>
 
+        <div class="product-card product-featured">
+          <div class="product-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
+          <div class="product-badges"><span class="product-badge">C#</span><span class="product-badge">Stable Diffusion</span><span class="product-badge">VOICEVOX</span></div>
+          <h3>InsightImageGen</h3>
+          <p><span lang="ja">Stable DiffusionとVOICEVOXを活用したAI画像・音声生成ツール。テキストからの画像生成、キャラクター一括生成、日本語読み上げに対応。</span><span lang="en">AI image & audio generation using Stable Diffusion and VOICEVOX. Text-to-image, batch character generation, and Japanese text-to-speech.</span></p>
+          <ul class="product-features">
+            <li><span lang="ja">テキストから画像自動生成</span><span lang="en">Text-to-image generation</span></li>
+            <li><span lang="ja">バッチキャラクター生成</span><span lang="en">Batch character generation</span></li>
+            <li><span lang="ja">VOICEVOX音声合成</span><span lang="en">VOICEVOX speech synthesis</span></li>
+          </ul>
+        </div>
+
+        <div class="product-card product-featured">
+          <div class="product-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+          <div class="product-badges"><span class="product-badge">C#</span><span class="product-badge">.NET 8</span></div>
+          <h3>InsightExcel</h3>
+          <p><span lang="ja">Excelデータの操作・分析を効率化するデスクトップアプリケーション。Insight Officeスイートの表計算コンポーネント。</span><span lang="en">Desktop app for efficient Excel data manipulation and analysis. Part of the Insight Office suite.</span></p>
+          <ul class="product-features">
+            <li><span lang="ja">Excel操作の効率化</span><span lang="en">Streamlined Excel operations</span></li>
+            <li><span lang="ja">データ分析機能</span><span lang="en">Data analysis features</span></li>
+            <li><span lang="ja">Office Suite統合</span><span lang="en">Office Suite integration</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 開発実績 カテゴリ別 -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <h2 class="section-title"><span lang="ja">開発実績</span><span lang="en">Development Portfolio</span></h2>
+      <p class="section-subtitle">Full Portfolio</p>
+      <p class="section-description">
+        <span lang="ja">100を超えるリポジトリから、カテゴリ別にプロジェクト実績をご紹介します</span>
+        <span lang="en">Showcasing projects from 100+ repositories, organized by category</span>
+      </p>
+
+      <!-- 建設業DX -->
+      <div class="portfolio-category">
+        <div class="category-header">
+          <div class="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg></div>
+          <h3><span lang="ja">建設業DXソリューション</span><span lang="en">Construction DX Solutions</span></h3>
+          <span class="category-count">7+</span>
+        </div>
+        <div class="portfolio-list">
+          <div class="portfolio-item"><span class="item-name">InsightBI</span><span class="item-tech">TypeScript / Next.js</span><span class="item-desc"><span lang="ja">IT企業・建設業向けBIダッシュボード</span><span lang="en">BI dashboard for IT/construction firms</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Sales Insight</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">営業パイプライン管理ツール</span><span lang="en">Sales pipeline management tool</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Insight Diagnosis</span><span class="item-tech">Python</span><span class="item-desc"><span lang="ja">業務調査・ABCD評価レポート自動生成</span><span lang="en">Business survey & ABCD evaluation report generator</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Auto Interview</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">業務調査を自動化するインタビューツール</span><span lang="en">Automated business survey interview tool</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Construction KPI</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">建設業のKPI管理・可視化</span><span lang="en">Construction industry KPI management</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Construction Level Test</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">建設業の知識レベル判定テスト</span><span lang="en">Construction knowledge assessment test</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Insight Reports</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">次世代帳票ダッシュボード</span><span lang="en">Next-generation reporting dashboard</span></span></div>
+        </div>
+      </div>
+
+      <!-- AI & クリエイティブ -->
+      <div class="portfolio-category">
+        <div class="category-header">
+          <div class="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
+          <h3><span lang="ja">AI & クリエイティブツール</span><span lang="en">AI & Creative Tools</span></h3>
+          <span class="category-count">8+</span>
+        </div>
+        <div class="portfolio-list">
+          <div class="portfolio-item"><span class="item-name">InsightImageGen</span><span class="item-tech">C# / Python</span><span class="item-desc"><span lang="ja">Stable Diffusion画像生成 + VOICEVOX音声合成</span><span lang="en">Stable Diffusion image gen + VOICEVOX TTS</span></span></div>
+          <div class="portfolio-item"><span class="item-name">InsightMovie</span><span class="item-tech">C# / Python</span><span class="item-desc"><span lang="ja">静止画・テキストから自動動画作成</span><span lang="en">Auto video generation from images & text</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Live2D Talker</span><span class="item-tech">JavaScript</span><span class="item-desc"><span lang="ja">Live2Dキャラクターによるナレーション</span><span lang="en">Live2D character narration</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Live2D Interview</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">2次元秘書による対話型インタビュー</span><span lang="en">2D secretary conversational interview</span></span></div>
+          <div class="portfolio-item"><span class="item-name">InsightChatBot</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">顧客導入可能なAIチャットボット</span><span lang="en">Customer-deployable AI chatbot</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Value Estimator</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">AI案件見積もりツール</span><span lang="en">AI project estimation tool</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Auto Error Fix</span><span class="item-tech">Python / Claude API</span><span class="item-desc"><span lang="ja">CI失敗の自動検知・修正・PR作成</span><span lang="en">Auto CI failure detection, fix & PR creation</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Blender VRM Gen</span><span class="item-tech">Python / Blender</span><span class="item-desc"><span lang="ja">建設現場監督VRMキャラクター自動生成</span><span lang="en">Construction supervisor VRM character gen</span></span></div>
+        </div>
+      </div>
+
+      <!-- Office & デスクトップ -->
+      <div class="portfolio-category">
+        <div class="category-header">
+          <div class="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
+          <h3><span lang="ja">Insight Office & デスクトップ</span><span lang="en">Insight Office & Desktop</span></h3>
+          <span class="category-count">6+</span>
+        </div>
+        <div class="portfolio-list">
+          <div class="portfolio-item"><span class="item-name">InsightSlide</span><span class="item-tech">C# / Python</span><span class="item-desc"><span lang="ja">PowerPointテキスト抽出・解析 (Released v1.0)</span><span lang="en">PowerPoint text extraction (Released v1.0)</span></span></div>
+          <div class="portfolio-item"><span class="item-name">HarmonicDoc</span><span class="item-tech">C# / .NET 8</span><span class="item-desc"><span lang="ja">AI搭載Word文書アシスタント</span><span lang="en">AI-powered Word document assistant</span></span></div>
+          <div class="portfolio-item"><span class="item-name">InsightExcel</span><span class="item-tech">C# / .NET 8</span><span class="item-desc"><span lang="ja">Excel操作・分析ツール</span><span lang="en">Excel operations & analysis tool</span></span></div>
+          <div class="portfolio-item"><span class="item-name">HarmonicSheet</span><span class="item-tech">C# / WPF / Claude AI</span><span class="item-desc"><span lang="ja">シニア向け統合オフィスアプリ</span><span lang="en">Integrated office app for seniors</span></span></div>
+          <div class="portfolio-item"><span class="item-name">InsightPinboard</span><span class="item-tech">C# / WPF</span><span class="item-desc"><span lang="ja">無限キャンバスのビジュアルファイル整理</span><span lang="en">Infinite canvas visual file organizer</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Insight Launcher</span><span class="item-tech">C# / .NET 8</span><span class="item-desc"><span lang="ja">Insight Series統合ランチャー</span><span lang="en">Insight Series unified launcher</span></span></div>
+        </div>
+      </div>
+
+      <!-- RPA & 自動化 -->
+      <div class="portfolio-category">
+        <div class="category-header">
+          <div class="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <h3><span lang="ja">RPA & 業務自動化</span><span lang="en">RPA & Business Automation</span></h3>
+          <span class="category-count">7+</span>
+        </div>
+        <div class="portfolio-list">
+          <div class="portfolio-item"><span class="item-name">InsightBot</span><span class="item-tech">C#</span><span class="item-desc"><span lang="ja">製品版RPA Bot（Python RPAのC#移植）</span><span lang="en">Production RPA Bot (Python RPA ported to C#)</span></span></div>
+          <div class="portfolio-item"><span class="item-name">InsightPy</span><span class="item-tech">Python</span><span class="item-desc"><span lang="ja">Python実行環境・オーケストレーター</span><span lang="en">Python execution environment & orchestrator</span></span></div>
+          <div class="portfolio-item"><span class="item-name">InsightMigration</span><span class="item-tech">Python / TypeScript</span><span class="item-desc"><span lang="ja">マイグレーション・RPAフレームワーク</span><span lang="en">Migration & RPA framework</span></span></div>
+          <div class="portfolio-item"><span class="item-name">NoCode Analyzer</span><span class="item-tech">C# / Python</span><span class="item-desc"><span lang="ja">Bizrobo / Forguncy ソースコード解析</span><span lang="en">Bizrobo / Forguncy source code analyzer</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Auto Requirements</span><span class="item-tech">Python</span><span class="item-desc"><span lang="ja">要件からアプリを自動生成するツール</span><span lang="en">Auto app generation from requirements</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Insight Documentor</span><span class="item-tech">JavaScript</span><span class="item-desc"><span lang="ja">WEB/WINマニュアル自動作成ツール</span><span lang="en">Web/Windows manual auto-generator</span></span></div>
+        </div>
+      </div>
+
+      <!-- データ & ナレッジ -->
+      <div class="portfolio-category">
+        <div class="category-header">
+          <div class="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+          <h3><span lang="ja">データ収集 & ナレッジ管理</span><span lang="en">Data Collection & Knowledge</span></h3>
+          <span class="category-count">5+</span>
+        </div>
+        <div class="portfolio-list">
+          <div class="portfolio-item"><span class="item-name">YouTube Collector</span><span class="item-tech">Python</span><span class="item-desc"><span lang="ja">YouTube字幕データ収集・Knowledge Mart連携</span><span lang="en">YouTube transcript collection & Knowledge Mart</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Slide from PDF</span><span class="item-tech">Python / OCR</span><span class="item-desc"><span lang="ja">PDF→PowerPoint変換、カラーオブジェクト検出</span><span lang="en">PDF to PowerPoint with color object detection</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Insight Keeper</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">業務ボックスからの情報読み取り・仕分け</span><span lang="en">Business box data reading & sorting</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Mart Generator</span><span class="item-tech">Python</span><span class="item-desc"><span lang="ja">ナレッジマート自動生成ツール</span><span lang="en">Knowledge mart auto-generator</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Issue Management</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">日々のコメント蓄積から課題・問題点を抽出</span><span lang="en">Extract issues from daily comment accumulation</span></span></div>
+        </div>
+      </div>
+
+      <!-- モバイル -->
+      <div class="portfolio-category">
+        <div class="category-header">
+          <div class="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+          <h3><span lang="ja">モバイルアプリケーション</span><span lang="en">Mobile Applications</span></h3>
+          <span class="category-count">12+</span>
+        </div>
+        <div class="portfolio-list">
+          <div class="portfolio-item"><span class="item-name">Construction Education</span><span class="item-tech">Kotlin / Android</span><span class="item-desc"><span lang="ja">建設業向け教育アプリケーション</span><span lang="en">Construction education app</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Voice Memo</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">音声でメモ・タスク・スケジュール管理</span><span lang="en">Voice-based memo, task & schedule manager</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Family Schedule</span><span class="item-tech">TypeScript / Swift</span><span class="item-desc"><span lang="ja">家族のスケジュール管理アプリ</span><span lang="en">Family schedule management app</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Intake Checker</span><span class="item-tech">Swift / iOS</span><span class="item-desc"><span lang="ja">薬・サプリ摂取管理アプリ</span><span lang="en">Medication & supplement intake tracker</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Insight Clip</span><span class="item-tech">Kotlin / Android</span><span class="item-desc"><span lang="ja">カスタムクリップボードアプリ</span><span lang="en">Custom clipboard app</span></span></div>
+          <div class="portfolio-item"><span class="item-name"><span lang="ja">その他 Android/iOS</span><span lang="en">Other Android/iOS</span></span><span class="item-tech">Kotlin / Swift</span><span class="item-desc"><span lang="ja">ポータル、リーダー、マニュアルスキャン等 7+ アプリ</span><span lang="en">Portal, reader, manual scan & 7+ more apps</span></span></div>
+        </div>
+      </div>
+
+      <!-- Web & ビジネス -->
+      <div class="portfolio-category">
+        <div class="category-header">
+          <div class="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <h3><span lang="ja">Webアプリ & ビジネスツール</span><span lang="en">Web Apps & Business Tools</span></h3>
+          <span class="category-count">8+</span>
+        </div>
+        <div class="portfolio-list">
+          <div class="portfolio-item"><span class="item-name">Insight Learning</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">1on1教育プラットフォーム（動画 + モバイル）</span><span lang="en">1-on-1 education platform (video + mobile)</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Family Cashflow</span><span class="item-tech">Python / Flask</span><span class="item-desc"><span lang="ja">家計キャッシュフロー管理</span><span lang="en">Family cashflow management</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Management Finance</span><span class="item-tech">Python</span><span class="item-desc"><span lang="ja">管理会計パッケージ</span><span lang="en">Management accounting package</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Human Management</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">チームメンバの能力・評価管理</span><span lang="en">Team member skill & evaluation management</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Security Check</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">IPA・経産省準拠セキュリティチェック</span><span lang="en">IPA/METI security compliance checker</span></span></div>
+          <div class="portfolio-item"><span class="item-name">License Management</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">ライセンス販売顧客管理</span><span lang="en">License sales customer management</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Insight Factory</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">開発の全てを管理する統合ツール</span><span lang="en">Unified development management tool</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Insight Office Website</span><span class="item-tech">TypeScript / Next.js</span><span class="item-desc"><span lang="ja">Insight Office公式プロダクトページ</span><span lang="en">Insight Office official product page</span></span></div>
+        </div>
+      </div>
+
+      <!-- 共通基盤 -->
+      <div class="portfolio-category">
+        <div class="category-header">
+          <div class="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          <h3><span lang="ja">共通基盤 & インフラ</span><span lang="en">Shared Infrastructure</span></h3>
+          <span class="category-count">5+</span>
+        </div>
+        <div class="portfolio-list">
+          <div class="portfolio-item"><span class="item-name">lib-insight-common</span><span class="item-tech">TS / C# / Python</span><span class="item-desc"><span lang="ja">9アプリ共通ライブラリ（ライセンス・i18n・デザイン）</span><span lang="en">Shared library for 9 apps (licensing, i18n, design)</span></span></div>
+          <div class="portfolio-item"><span class="item-name">HI Portal</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">全ツールを管理するポータルサイト</span><span lang="en">Portal site managing all tools</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Releases</span><span class="item-tech">CI/CD</span><span class="item-desc"><span lang="ja">全実行モジュールの集中リリース管理</span><span lang="en">Centralized release management</span></span></div>
+          <div class="portfolio-item"><span class="item-name">Prompt Research</span><span class="item-tech">TypeScript</span><span class="item-desc"><span lang="ja">プログラム自動実行の研究リポジトリ</span><span lang="en">Auto program execution research</span></span></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 技術スタック -->
-  <section class="section">
+  <section class="section section-alt">
     <div class="container">
-      <h2 class="section-title">技術スタック</h2>
+      <h2 class="section-title"><span lang="ja">技術スタック</span><span lang="en">Technology Stack</span></h2>
       <p class="section-subtitle">Technology</p>
       <div class="tech-grid">
-        <div class="tech-group">
-          <h3>フロントエンド</h3>
-          <ul>
-            <li>TypeScript</li>
-            <li>React / Next.js</li>
-            <li>HTML5 / CSS3</li>
-            <li>モバイルアプリ開発</li>
-          </ul>
+        <div class="tech-group"><h3><span lang="ja">デスクトップ</span><span lang="en">Desktop</span></h3><ul><li>C# / .NET 8 / WPF</li><li>Syncfusion Controls</li><li>Inno Setup</li></ul></div>
+        <div class="tech-group"><h3><span lang="ja">Web フロントエンド</span><span lang="en">Web Frontend</span></h3><ul><li>TypeScript / React</li><li>Next.js (App Router)</li><li>Tailwind CSS</li></ul></div>
+        <div class="tech-group"><h3><span lang="ja">バックエンド</span><span lang="en">Backend</span></h3><ul><li>Python / Flask</li><li>Node.js</li><li>Supabase / Vercel</li></ul></div>
+        <div class="tech-group"><h3><span lang="ja">モバイル</span><span lang="en">Mobile</span></h3><ul><li>Kotlin (Android)</li><li>Swift (iOS)</li><li>React Native</li></ul></div>
+        <div class="tech-group"><h3>AI & <span lang="ja">生成</span><span lang="en">Gen</span></h3><ul><li>Claude API (Anthropic)</li><li>Stable Diffusion</li><li>VOICEVOX / Live2D</li></ul></div>
+        <div class="tech-group"><h3>RPA & <span lang="ja">解析</span><span lang="en">Analysis</span></h3><ul><li>Bizrobo / Forguncy</li><li>OCR (Tesseract)</li><li>OpenCV / PyMuPDF</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 事業内容 -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title"><span lang="ja">事業内容</span><span lang="en">Services</span></h2>
+      <p class="section-subtitle">Services</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
+          <h3><span lang="ja">AI活用アプリ開発</span><span lang="en">AI Application Development</span></h3>
+          <p><span lang="ja">Claude API、Stable Diffusion、VOICEVOX等を活用したビジネスアプリの企画・開発。画像生成、動画作成、対話型AIまで幅広く対応。</span><span lang="en">Planning and development of business apps using Claude API, Stable Diffusion, VOICEVOX, etc. From image gen to video creation and conversational AI.</span></p>
         </div>
-        <div class="tech-group">
-          <h3>バックエンド</h3>
-          <ul>
-            <li>Node.js</li>
-            <li>Python</li>
-            <li>C# / .NET</li>
-            <li>REST API設計</li>
-          </ul>
+        <div class="service-card">
+          <div class="service-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <h3><span lang="ja">建設業DXコンサルティング</span><span lang="en">Construction DX Consulting</span></h3>
+          <p><span lang="ja">業務診断、KPI可視化、パイプライン管理、教育ツールまで、建設業界に特化したDX推進を戦略から実行まで一貫支援。</span><span lang="en">End-to-end DX support for construction: business diagnosis, KPI visualization, pipeline management, and education tools.</span></p>
         </div>
-        <div class="tech-group">
-          <h3>AI・データ</h3>
-          <ul>
-            <li>AI画像生成</li>
-            <li>自動化ツール</li>
-            <li>PDF処理</li>
-            <li>データ分析</li>
-          </ul>
+        <div class="service-card">
+          <div class="service-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
+          <h3><span lang="ja">データ分析・BI構築</span><span lang="en">Data Analytics & BI</span></h3>
+          <p><span lang="ja">Next.js/Rechartsを用いたBIダッシュボード構築、KPI可視化、収益性分析、受注予測など、データドリブンな意思決定を支援。</span><span lang="en">BI dashboards with Next.js/Recharts, KPI visualization, profitability analysis, and order forecasting for data-driven decisions.</span></p>
         </div>
-        <div class="tech-group">
-          <h3>プラットフォーム連携</h3>
-          <ul>
-            <li>LINE API</li>
-            <li>Microsoft Teams</li>
-            <li>Slack</li>
-            <li>各種外部API</li>
-          </ul>
+        <div class="service-card">
+          <div class="service-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <h3><span lang="ja">RPA・業務自動化</span><span lang="en">RPA & Automation</span></h3>
+          <p><span lang="ja">Bizrobo/Forguncy解析、マイグレーションフレームワーク、CI自動修正など、既存業務の自動化ソリューションを提供。</span><span lang="en">Bizrobo/Forguncy analysis, migration frameworks, CI auto-fix, and existing workflow automation solutions.</span></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 実績 -->
-  <section id="portfolio" class="section section-alt">
+  <!-- 著書 -->
+  <section id="books" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">開発実績</h2>
-      <p class="section-subtitle">Portfolio</p>
-      <div class="portfolio-grid">
-
-        <div class="portfolio-card">
-          <div class="portfolio-tag">TypeScript</div>
-          <h3>1on1教育プラットフォーム</h3>
-          <p>ビデオ通話機能とモバイルアプリを備えた、オンライン1対1教育プラットフォーム。講師と生徒をリアルタイムで繋ぎ、効果的な学習体験を提供します。</p>
-          <ul class="portfolio-features">
-            <li>ビデオ通話による1on1レッスン</li>
-            <li>モバイルアプリ対応</li>
-            <li>レッスン管理・スケジュール機能</li>
-          </ul>
+      <h2 class="section-title"><span lang="ja">著書・出版</span><span lang="en">Publications</span></h2>
+      <p class="section-subtitle">Publications</p>
+      <div class="books-content">
+        <div class="books-highlight">
+          <div class="books-number">~40</div>
+          <div class="books-label"><span lang="ja">冊のKindle書籍を出版</span><span lang="en">Kindle Books Published</span></div>
         </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-tag">C#</div>
-          <h3>AI画像生成アプリケーション</h3>
-          <p>C#で構築したAI画像生成ツール。ユーザーの指示に基づいて高品質な画像を自動生成します。クリエイティブ業務の効率化を実現します。</p>
-          <ul class="portfolio-features">
-            <li>AI画像生成エンジン統合</li>
-            <li>直感的なユーザーインターフェース</li>
-            <li>バッチ処理対応</li>
-          </ul>
+        <p class="books-description">
+          <span lang="ja">IT・ビジネス・テクノロジーに関する知見を、Kindleを通じて幅広く発信しています。プロジェクトマネジメント、データ分析、AI活用、建設業DXなど、実務経験に基づいた実践的な内容の書籍を多数出版しています。</span>
+          <span lang="en">Sharing expertise in IT, business, and technology through Kindle. Approximately 40 practical books based on real-world experience covering project management, data analytics, AI applications, and construction DX.</span>
+        </p>
+        <div class="books-topics">
+          <span class="topic-tag"><span lang="ja">プロジェクトマネジメント</span><span lang="en">Project Management</span></span>
+          <span class="topic-tag"><span lang="ja">データ分析</span><span lang="en">Data Analytics</span></span>
+          <span class="topic-tag"><span lang="ja">AI活用</span><span lang="en">AI Applications</span></span>
+          <span class="topic-tag"><span lang="ja">建設業DX</span><span lang="en">Construction DX</span></span>
+          <span class="topic-tag"><span lang="ja">業務改革</span><span lang="en">Business Reform</span></span>
+          <span class="topic-tag">RPA</span>
         </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-tag">Python</div>
-          <h3>自動エラー修正ツール</h3>
-          <p>ソースコードのエラーを自動検出・修正するツール。開発効率を大幅に向上させ、コード品質の維持に貢献します。</p>
-          <ul class="portfolio-features">
-            <li>自動エラー検出・修正</li>
-            <li>複数言語対応</li>
-            <li>CI/CDパイプライン統合</li>
-          </ul>
-        </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-tag">Python</div>
-          <h3>PDFスライド変換ツール</h3>
-          <p>PDFドキュメントからプレゼンテーションスライドを自動生成するツール。資料作成の工数を削減し、業務効率化に貢献します。</p>
-          <ul class="portfolio-features">
-            <li>PDF解析・コンテンツ抽出</li>
-            <li>スライド自動レイアウト</li>
-            <li>カスタムテンプレート対応</li>
-          </ul>
-        </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-tag">API連携</div>
-          <h3>SNSプラットフォーム統合</h3>
-          <p>LINE、Microsoft Teams、Slackなど複数のメッセージングプラットフォームを統合するシステム。企業のコミュニケーション基盤を一元化します。</p>
-          <ul class="portfolio-features">
-            <li>LINE Bot / Messaging API</li>
-            <li>Teams Webhook連携</li>
-            <li>Slack App開発</li>
-          </ul>
-        </div>
-
       </div>
     </div>
   </section>
@@ -276,42 +505,20 @@
   <!-- 事業者情報 -->
   <section id="info" class="section">
     <div class="container">
-      <h2 class="section-title">事業者情報</h2>
+      <h2 class="section-title"><span lang="ja">事業者情報</span><span lang="en">Business Information</span></h2>
       <p class="section-subtitle">Business Information</p>
       <div class="info-table-wrap">
         <table class="info-table">
           <tbody>
-            <tr>
-              <th>屋号</th>
-              <td>Harmonic Insight</td>
-            </tr>
-            <tr>
-              <th>代表者</th>
-              <td>瀬田 博之</td>
-            </tr>
-            <tr>
-              <th>事業形態</th>
-              <td>個人事業主</td>
-            </tr>
-            <tr>
-              <th>所在地</th>
-              <td>〒162-0803<br>東京都新宿区赤城下町63-5</td>
-            </tr>
-            <tr>
-              <th>メールアドレス</th>
-              <td><a href="mailto:erik.arthur.com@gmail.com">erik.arthur.com@gmail.com</a></td>
-            </tr>
-            <tr>
-              <th>事業内容</th>
-              <td>
-                ITコンサルティング<br>
-                Webアプリケーション開発<br>
-                モバイルアプリ開発<br>
-                システム構築・API連携<br>
-                AI・自動化ツール開発<br>
-                教育・研修サービス
-              </td>
-            </tr>
+            <tr><th><span lang="ja">屋号</span><span lang="en">Trade Name</span></th><td><span lang="ja">ハーモニックインサイト（Harmonic Insight）</span><span lang="en">Harmonic Insight</span></td></tr>
+            <tr><th><span lang="ja">代表者</span><span lang="en">Representative</span></th><td>Erik Arthur<span lang="ja">（エリック・アーサー）</span></td></tr>
+            <tr><th><span lang="ja">肩書</span><span lang="en">Title</span></th><td><span lang="ja">ビジネスアプリケーションクリエーター</span><span lang="en">Business Application Creator</span></td></tr>
+            <tr><th><span lang="ja">事業形態</span><span lang="en">Business Type</span></th><td><span lang="ja">個人事業主</span><span lang="en">Sole Proprietor</span></td></tr>
+            <tr><th><span lang="ja">活動拠点</span><span lang="en">Location</span></th><td><span lang="ja">東京</span><span lang="en">Tokyo, Japan</span></td></tr>
+            <tr><th><span lang="ja">事業内容</span><span lang="en">Business</span></th><td>
+              <span lang="ja">AI活用ビジネスアプリケーション企画・開発<br>建設業DXコンサルティング<br>データ分析・BI構築<br>RPA・業務自動化<br>技術書籍執筆・出版</span>
+              <span lang="en">AI Business Application Development<br>Construction DX Consulting<br>Data Analytics & BI<br>RPA & Business Automation<br>Technical Book Publishing</span>
+            </td></tr>
           </tbody>
         </table>
       </div>
@@ -319,27 +526,23 @@
   </section>
 
   <!-- お問い合わせ -->
-  <section id="contact" class="section section-dark">
+  <section id="contact" class="section section-contact">
     <div class="container">
-      <h2 class="section-title section-title-light">お問い合わせ</h2>
-      <p class="section-subtitle section-subtitle-light">Contact</p>
+      <h2 class="section-title"><span lang="ja">お問い合わせ</span><span lang="en">Contact</span></h2>
+      <p class="section-subtitle">Contact</p>
       <div class="contact-content">
         <p class="contact-lead">
-          プロジェクトのご相談、お見積もりのご依頼など、<br class="pc-only">
-          お気軽にお問い合わせください。
+          <span lang="ja">プロダクトに関するご質問、コンサルティングのご相談など、<br class="pc-only">お気軽にお問い合わせください。</span>
+          <span lang="en">For product inquiries, consulting requests, or any questions,<br class="pc-only">please feel free to reach out.</span>
         </p>
         <div class="contact-methods">
           <a href="mailto:erik.arthur.com@gmail.com" class="contact-card">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/>
-            </svg>
-            <span class="contact-label">メール</span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+            <span class="contact-label"><span lang="ja">メール</span><span lang="en">Email</span></span>
             <span class="contact-value">erik.arthur.com@gmail.com</span>
           </a>
           <a href="https://github.com/HarmonicInsight" target="_blank" rel="noopener noreferrer" class="contact-card">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             <span class="contact-label">GitHub</span>
             <span class="contact-value">github.com/HarmonicInsight</span>
           </a>
@@ -351,8 +554,7 @@
   <!-- フッター -->
   <footer class="footer">
     <div class="container footer-inner">
-      <p class="footer-copy">&copy; 2025 Harmonic Insight / 瀬田博之. All rights reserved.</p>
-      <p class="footer-address">〒162-0803 東京都新宿区赤城下町63-5</p>
+      <p class="footer-copy">&copy; 2025 Harmonic Insight / Erik Arthur. All rights reserved.</p>
     </div>
   </footer>
 
@@ -380,6 +582,29 @@
     // ヘッダースクロール効果
     window.addEventListener('scroll', () => {
       document.querySelector('.header').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    // スクロールアニメーション
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+    document.querySelectorAll('.product-card, .service-card, .credential-card, .portfolio-category').forEach(el => {
+      el.classList.add('animate-in');
+      observer.observe(el);
+    });
+    // 言語切り替え
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.setAttribute('lang', lang);
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
     });
   </script>
 
