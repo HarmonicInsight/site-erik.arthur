@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harmonic Insight — AI活用ビジネスアプリケーション開発</title>
+<meta name="description" content="Harmonic InsightはAI活用ビジネスアプリケーションの企画・開発を行う法人です。Insight Seriesをはじめ、爆速開発で業務課題を解決します。">
+<meta property="og:title" content="Harmonic Insight — AI活用ビジネスアプリケーション開発" />
+<meta property="og:description" content="120以上のプロジェクト、構造化された知見による爆速開発。Insight Seriesと受託開発。" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ja_JP" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-card: #16161f;
+  --bg-card-hover: #1c1c28;
+  --text-primary: #f0eff4;
+  --text-secondary: #9b99a9;
+  --text-muted: #6b6980;
+  --accent: #c8a2ff;
+  --accent-bright: #e0c4ff;
+  --accent-dim: #7c5cad;
+  --accent-glow: rgba(200, 162, 255, 0.15);
+  --gold: #f0c864;
+  --cyan: #64d8e8;
+  --green: #7ae8a0;
+  --border: rgba(255,255,255,0.06);
+  --border-accent: rgba(200,162,255,0.2);
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Noto Sans JP', 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--accent-dim); border-radius: 3px; }
+
+a { color: inherit; text-decoration: none; }
+
+/* --- NAVIGATION --- */
+nav {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  padding: 1.25rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(10,10,15,0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.nav-logo .logo-mark {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--bg-primary);
+}
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: color 0.3s;
+  font-family: var(--font-display);
+}
+.nav-links a:hover { color: var(--accent-bright); }
+.nav-cta {
+  background: var(--accent) !important;
+  color: var(--bg-primary) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600 !important;
+  transition: all 0.3s !important;
+}
+.nav-cta:hover { background: var(--accent-bright) !important; transform: translateY(-1px); }
+
+/* --- HERO --- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 3rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-glow {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+.hero-glow-1 { top: -100px; right: -100px; background: var(--accent); }
+.hero-glow-2 { bottom: -200px; left: -200px; background: var(--cyan); opacity: 0.08; }
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.2s;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.4s;
+}
+.hero-title .line { display: block; }
+.hero-title .highlight {
+  background: linear-gradient(135deg, var(--accent-bright), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.6s;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.8s;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-primary:hover { background: var(--accent-bright); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,162,255,0.3); }
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  border: 1px solid var(--border-accent);
+  transition: all 0.3s;
+}
+.btn-secondary:hover { border-color: var(--accent); background: var(--accent-glow); }
+
+/* --- IMPACT STATS --- */
+.impact-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 1s;
+}
+.stat-item {
+  background: var(--bg-secondary);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: background 0.3s;
+}
+.stat-item:hover { background: var(--bg-card); }
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+.stat-number.purple { color: var(--accent-bright); }
+.stat-number.gold { color: var(--gold); }
+.stat-number.cyan { color: var(--cyan); }
+.stat-number.green { color: var(--green); }
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+.stat-sub {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent-dim);
+  margin-top: 0.4rem;
+}
+
+/* --- SECTION COMMON --- */
+section {
+  padding: 6rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+.section-desc {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 600px;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+/* --- QUOTE --- */
+.quote-band {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 4rem 3rem;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+.quote-band blockquote {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+.quote-band .q-highlight { color: var(--accent-bright); }
+.quote-band .q-attr {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* --- PRODUCTS --- */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.product-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+.product-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+}
+.product-card .prod-tag {
+  display: inline-flex;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+.product-card .prod-tag span {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(200,162,255,0.1);
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.product-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.product-card p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.products-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+.products-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+.products-cta a:hover {
+  background: var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+/* --- SPEED PROOF --- */
+.speed-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.speed-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: all 0.4s;
+}
+.speed-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.speed-card .card-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+.speed-card .card-icon.purple { background: rgba(200,162,255,0.12); }
+.speed-card .card-icon.gold { background: rgba(240,200,100,0.12); }
+.speed-card .card-icon.cyan { background: rgba(100,216,232,0.12); }
+.speed-card .card-icon.green { background: rgba(122,232,160,0.12); }
+.speed-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.speed-card .speed-metric {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+}
+.speed-card .speed-metric.purple { color: var(--accent-bright); }
+.speed-card .speed-metric.gold { color: var(--gold); }
+.speed-card .speed-metric.cyan { color: var(--cyan); }
+.speed-card .speed-metric.green { color: var(--green); }
+.speed-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.speed-card .comparison {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.speed-card .comparison span { color: var(--accent); }
+
+/* --- SERVICE --- */
+.service-highlight {
+  background: linear-gradient(135deg, rgba(200,162,255,0.06), rgba(100,216,232,0.04));
+  border: 1px solid var(--border-accent);
+  border-radius: 20px;
+  padding: 3.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.service-highlight::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+  pointer-events: none;
+}
+.service-highlight h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+.service-highlight .price {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--accent-bright);
+  margin-bottom: 1rem;
+  position: relative;
+}
+.service-highlight .price-note {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+.service-highlight p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.service-flow {
+  display: flex;
+  gap: 0;
+  position: relative;
+  margin-top: 2rem;
+}
+.flow-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding: 1.5rem 1rem;
+}
+.flow-step::after {
+  content: '→';
+  position: absolute;
+  right: -0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-dim);
+  font-size: 1.2rem;
+}
+.flow-step:last-child::after { display: none; }
+.flow-step .step-time {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+}
+.flow-step .step-label {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.flow-step .step-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+.service-card:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-card-hover);
+}
+.service-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.service-card p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* --- TECH STACK --- */
+.tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+.tech-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.45rem 1rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  transition: all 0.3s;
+}
+.tech-pill:hover { border-color: var(--accent-dim); color: var(--accent-bright); }
+
+.portfolio-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.portfolio-item {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  text-align: center;
+}
+.portfolio-item .p-num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-bright);
+}
+.portfolio-item .p-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+/* --- COMPANY INFO --- */
+.company-info {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.company-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.company-info dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1.5rem;
+}
+.company-info dt {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.company-info dd {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.company-info .founder-note {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+.company-info .founder-note a {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+.company-info .founder-note a:hover {
+  border-bottom-color: var(--accent);
+}
+.certs-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.cert-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+}
+
+/* --- CONTACT --- */
+.contact-section {
+  text-align: center;
+  padding: 8rem 3rem;
+}
+.contact-section .section-desc {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+}
+.contact-email {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--accent-bright);
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+  padding-bottom: 4px;
+}
+.contact-email:hover { border-bottom-color: var(--accent-bright); }
+
+/* --- FOOTER --- */
+footer {
+  padding: 2rem 3rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.footer-links a {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--accent-bright); }
+
+/* --- ANIMATIONS --- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { padding: 7rem 1.5rem 3rem; }
+  section { padding: 4rem 1.5rem; }
+  .impact-stats { grid-template-columns: repeat(2, 1fr); }
+  .speed-grid { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .company-info { grid-template-columns: 1fr; }
+  .service-flow { flex-direction: column; gap: 0.5rem; }
+  .flow-step::after { display: none; }
+  .contact-section { padding: 5rem 1.5rem; }
+}
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  .mobile-menu-btn { display: block; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="logo-mark">HI</span>
+    Harmonic Insight
+  </a>
+  <div class="nav-links">
+    <a href="#products">プロダクト</a>
+    <a href="#speed">開発実績</a>
+    <a href="#services">サービス</a>
+    <a href="#company">会社情報</a>
+    <a href="#contact" class="nav-cta">お問い合わせ</a>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">☰</button>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Harmonic Insight — AI-Powered Business Applications</div>
+    <h1 class="hero-title">
+      <span class="line">構造化の力で、</span>
+      <span class="line"><span class="highlight">爆速のビジネス変革を。</span></span>
+    </h1>
+    <p class="hero-subtitle">
+      28年のIT・業務改革経験と構造化思考が生む圧倒的なスピード。<br>
+      120以上のプロジェクトと約40冊の著書が証明する、異次元の生産性。<br>
+      AI技術と業務理解を融合したプロダクト群で、ビジネスを加速します。
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">プロダクト一覧 →</a>
+      <a href="#services" class="btn-secondary">開発サービス</a>
+    </div>
+    <div class="impact-stats">
+      <div class="stat-item">
+        <div class="stat-number purple">120+</div>
+        <div class="stat-label">開発プロジェクト</div>
+        <div class="stat-sub">GitHub Repositories</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number gold">~40冊</div>
+        <div class="stat-label">著書</div>
+        <div class="stat-sub">1〜2ヶ月で執筆</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number cyan">6+</div>
+        <div class="stat-label">Insight Series 製品</div>
+        <div class="stat-sub">AI×業務アプリ</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number green">28年</div>
+        <div class="stat-label">IT・業務改革</div>
+        <div class="stat-sub">Since 1997</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- QUOTE -->
+<div class="quote-band">
+  <blockquote>
+    「速くできる＝安くていい」ではない。<br>
+    <span class="q-highlight">速くできること自体がプレミアム。</span>
+  </blockquote>
+  <div class="q-attr">— 構造化された28年の知見が、開発速度を再定義する</div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-label reveal">● Insight Series</div>
+  <h2 class="section-title reveal">プロダクト</h2>
+  <p class="section-desc reveal">
+    業務の深い理解とAI技術を融合した、Harmonic Insightの主力プロダクト群。
+  </p>
+  <div class="products-grid">
+    <div class="product-card reveal">
+      <div class="prod-tag"><span>C#</span><span>Python</span><span>Released</span></div>
+      <h3>InsightSlide</h3>
+      <p>PowerPointのテキスト抽出・解析ツール。スライド構造を保持したまま高精度抽出。翻訳準備やテキストマイニングに。</p>
+    </div>
+    <div class="product-card reveal">
+      <div class="prod-tag"><span>C#</span><span>Claude AI</span></div>
+      <h3>HarmonicDoc</h3>
+      <p>AI搭載Word文書アシスタント。Claude AIとの連携で、文書の作成・編集・要約を支援。</p>
+    </div>
+    <div class="product-card reveal">
+      <div class="prod-tag"><span>C#</span><span>WPF</span><span>Claude AI</span></div>
+      <h3>HarmonicSheet</h3>
+      <p>シニア向け統合オフィスアプリ。80歳以上でも直感的に操作可能な、文書・表計算・メール統合ツール。</p>
+    </div>
+    <div class="product-card reveal">
+      <div class="prod-tag"><span>TypeScript</span><span>Next.js</span></div>
+      <h3>InsightBI</h3>
+      <p>建設業向けBIダッシュボード。売上・粗利・プロジェクト状況をリアルタイムで可視化。</p>
+    </div>
+    <div class="product-card reveal">
+      <div class="prod-tag"><span>TypeScript</span><span>Live2D</span><span>AI</span></div>
+      <h3>Interview Insight</h3>
+      <p>Live2Dキャラクターが対話を通じて知識を抽出するAIインタビューツール。業務調査を自動化。</p>
+    </div>
+    <div class="product-card reveal">
+      <div class="prod-tag"><span>C#</span><span>Stable Diffusion</span></div>
+      <h3>InsightImageGen</h3>
+      <p>Stable DiffusionとVOICEVOXを活用したAI画像・音声生成ツール。テキストからの画像生成に対応。</p>
+    </div>
+  </div>
+
+  <div class="products-cta reveal">
+    <a href="https://www.insight-office.com/ja" target="_blank" rel="noopener">
+      → すべてのプロダクトの詳細を見る（Insight Office）
+    </a>
+  </div>
+</section>
+
+<!-- SPEED PROOF -->
+<section id="speed">
+  <div class="section-label reveal">● Proof of Speed</div>
+  <h2 class="section-title reveal">なぜ、この速度が可能なのか</h2>
+  <p class="section-desc reveal">
+    構造化能力 — 情報を体系的に理解・整理し、再利用可能な形に変換する力。<br>
+    すべてのスピードの源泉は、ここにあります。
+  </p>
+  <div class="speed-grid">
+    <div class="speed-card reveal">
+      <div class="card-icon purple">📚</div>
+      <h3>著書 約40冊</h3>
+      <div class="speed-metric purple">1〜2ヶ月で執筆</div>
+      <p>28年間で構造化された知識を、本というフォーマットに変換。ゼロから書くのではなく、整理された構造を出力するだけ。</p>
+      <div class="comparison">通常の著者: <span>1冊あたり6ヶ月〜1年</span></div>
+    </div>
+    <div class="speed-card reveal">
+      <div class="card-icon gold">⚡</div>
+      <h3>GitHub 120+ プロジェクト</h3>
+      <div class="speed-metric gold">数ヶ月で構築</div>
+      <p>共通基盤が洗練されているから、新しいプロジェクトほど速くなる。作れば作るほど加速する好循環。</p>
+      <div class="comparison">一般的な開発者: <span>年間3〜5プロジェクト</span></div>
+    </div>
+    <div class="speed-card reveal">
+      <div class="card-icon cyan">📈</div>
+      <h3>事業成長の再現性</h3>
+      <div class="speed-metric cyan">構造化 → 加速</div>
+      <p>創業者のコンサルティング経験（建設DX事業の立ち上げ・拡大）で培われた構造化能力が、プロダクト開発にも直結。</p>
+      <div class="comparison">0→1の立ち上げ + 1→10の拡大: <span>両方を経験</span></div>
+    </div>
+    <div class="speed-card reveal">
+      <div class="card-icon green">📱</div>
+      <h3>モバイルアプリ開発</h3>
+      <div class="speed-metric green">3日で5つのアプリ</div>
+      <p>時計、カメラ、QRコード等のAndroidアプリを数時間単位で開発。構造が頭にあるから迷わない。</p>
+      <div class="comparison">通常の開発: <span>1アプリあたり1〜3ヶ月</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label reveal">● Services</div>
+  <h2 class="section-title reveal">開発サービス</h2>
+  <p class="section-desc reveal">
+    28年の構造化能力が、あなたのビジネス課題を最速で解決します。
+  </p>
+
+  <div class="service-highlight reveal">
+    <h3>⚡ 爆速アプリ開発</h3>
+    <div class="price">1週間〜 <span class="price-note">/ 業界問わず対応</span></div>
+    <p>
+      午前中に要件をヒアリング。午後には動くプロトタイプ。<br>
+      28年の業界知識と構造化された共通基盤があるから、正しいものを最速で作ります。
+    </p>
+    <div class="service-flow">
+      <div class="flow-step">
+        <div class="step-time">DAY 1</div>
+        <div class="step-label">ヒアリング</div>
+        <div class="step-desc">業務課題の構造化</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-time">DAY 2-3</div>
+        <div class="step-label">プロトタイプ</div>
+        <div class="step-desc">動くものでフィードバック</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-time">DAY 4-5</div>
+        <div class="step-label">開発・調整</div>
+        <div class="step-desc">フル機能実装</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-time">DAY 6-7</div>
+        <div class="step-label">納品</div>
+        <div class="step-desc">本番稼働開始</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <h4>🤖 AI活用アプリ開発</h4>
+      <p>Claude API、Stable Diffusion、VOICEVOX等を活用したビジネスアプリの企画・開発。対話型AIから画像生成まで。</p>
+    </div>
+    <div class="service-card reveal">
+      <h4>📊 データ分析・BI構築</h4>
+      <p>BIダッシュボード構築、KPI可視化、収益性分析。データドリブンな意思決定を支援します。</p>
+    </div>
+    <div class="service-card reveal">
+      <h4>⚙️ RPA・業務自動化</h4>
+      <p>既存業務の自動化ソリューション。Bizrobo/Forguncy解析、マイグレーション、CI自動修正まで対応。</p>
+    </div>
+    <div class="service-card reveal">
+      <h4>🧪 プロダクト/新規事業 0→1</h4>
+      <p>企画・要件・UI/UX・プロトタイプ開発まで。レバレッジの効くプロダクト型ビジネスの立ち上げを支援。</p>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section>
+  <div class="section-label reveal">● Technology Stack</div>
+  <h2 class="section-title reveal">技術スタック</h2>
+  <p class="section-desc reveal">フルスタック開発を支える幅広い技術基盤。</p>
+  <div class="tech-row reveal">
+    <span class="tech-pill">C# / .NET 8</span>
+    <span class="tech-pill">WPF</span>
+    <span class="tech-pill">TypeScript</span>
+    <span class="tech-pill">React / Next.js</span>
+    <span class="tech-pill">Python / Flask</span>
+    <span class="tech-pill">Kotlin (Android)</span>
+    <span class="tech-pill">Swift (iOS)</span>
+    <span class="tech-pill">Tailwind CSS</span>
+    <span class="tech-pill">Supabase</span>
+    <span class="tech-pill">Vercel</span>
+    <span class="tech-pill">Claude API</span>
+    <span class="tech-pill">Stable Diffusion</span>
+    <span class="tech-pill">VOICEVOX</span>
+    <span class="tech-pill">Live2D</span>
+    <span class="tech-pill">OpenCV</span>
+    <span class="tech-pill">Tesseract OCR</span>
+    <span class="tech-pill">Syncfusion</span>
+    <span class="tech-pill">Inno Setup</span>
+  </div>
+  <div class="portfolio-bar reveal">
+    <div class="portfolio-item">
+      <div class="p-num">7+</div>
+      <div class="p-label">建設業DX</div>
+    </div>
+    <div class="portfolio-item">
+      <div class="p-num">8+</div>
+      <div class="p-label">AI・クリエイティブ</div>
+    </div>
+    <div class="portfolio-item">
+      <div class="p-num">6+</div>
+      <div class="p-label">デスクトップ</div>
+    </div>
+    <div class="portfolio-item">
+      <div class="p-num">7+</div>
+      <div class="p-label">RPA・自動化</div>
+    </div>
+    <div class="portfolio-item">
+      <div class="p-num">12+</div>
+      <div class="p-label">モバイルアプリ</div>
+    </div>
+    <div class="portfolio-item">
+      <div class="p-num">8+</div>
+      <div class="p-label">Web・ビジネス</div>
+    </div>
+    <div class="portfolio-item">
+      <div class="p-num">5+</div>
+      <div class="p-label">共通基盤</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY INFO -->
+<section id="company">
+  <div class="section-label reveal">● Company</div>
+  <h2 class="section-title reveal">会社情報</h2>
+  <p class="section-desc reveal">AI活用ビジネスアプリケーションの企画・開発を行う法人です。</p>
+
+  <div class="company-info reveal">
+    <div>
+      <h3>法人概要</h3>
+      <dl>
+        <dt>法人名</dt>
+        <dd>Harmonic Insight</dd>
+        <dt>所在地</dt>
+        <dd>東京都新宿区</dd>
+        <dt>事業内容</dt>
+        <dd>AI活用ビジネスアプリケーションの企画・開発・販売</dd>
+        <dt>主力製品</dt>
+        <dd>Insight Series（InsightSlide, HarmonicDoc, HarmonicSheet 等）</dd>
+        <dt>公式サイト</dt>
+        <dd><a href="https://h-insight.jp" target="_blank" rel="noopener" style="color:var(--accent);">h-insight.jp →</a></dd>
+        <dt>製品サイト</dt>
+        <dd><a href="https://www.insight-office.com/ja" target="_blank" rel="noopener" style="color:var(--cyan);">insight-office.com →</a></dd>
+      </dl>
+    </div>
+    <div>
+      <h3>創業者</h3>
+      <div class="founder-note">
+        <p>
+          Erik Arthur（瀬田 博之）。28年以上のIT・業務改革経験を持つコンサルタント兼アプリ開発者。
+          法人に出資・参画し、プロダクト開発とAI事業を推進。
+        </p>
+        <p style="margin-top:0.75rem;">
+          コンサルティング業務を含むフルプロフィールは<br>
+          <a href="index.html">個人サイト（erik-arthur）→</a> をご覧ください。
+        </p>
+      </div>
+      <div class="certs-row">
+        <span class="cert-badge">PMP</span>
+        <span class="cert-badge">宅地建物取引士</span>
+        <span class="cert-badge">Google Data Analytics</span>
+        <span class="cert-badge">ビジネス特許保有</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-label reveal">● Contact</div>
+  <h2 class="section-title reveal">お問い合わせ</h2>
+  <p class="section-desc reveal" style="text-align:center;">
+    プロダクトに関するご質問、爆速開発のご相談など、お気軽にお問い合わせください。
+  </p>
+  <a href="mailto:erik.arthur.com@gmail.com" class="contact-email reveal">erik.arthur.com@gmail.com</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p>© <span id="y"></span> Harmonic Insight / Erik Arthur. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://h-insight.jp" target="_blank" rel="noopener">h-insight.jp →</a>
+      <a href="https://www.insight-office.com/ja" target="_blank" rel="noopener" style="color:var(--cyan);">Insight Office →</a>
+      <a href="index.html">個人サイト →</a>
+    </div>
+  </div>
+</footer>
+
+<!-- SCROLL REVEAL -->
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>
