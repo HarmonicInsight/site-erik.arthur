@@ -62,8 +62,8 @@
       background: var(--bg);
       color: var(--text);
       font-family: var(--font-body);
-      font-size: 15.5px;
-      line-height: 1.75;
+      font-size: 16px;
+      line-height: 1.8;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       overflow-x:hidden;
@@ -110,8 +110,8 @@
     .section{ padding: clamp(56px, 8vw, 96px) 0; }
     .kicker{
       font-family: var(--font-mono);
-      font-size: 13px;
-      letter-spacing: .14em;
+      font-size: 13.5px;
+      letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--accent);
       opacity: 0.95;
@@ -127,10 +127,10 @@
     .lead{
       color: var(--muted);
       font-weight: 400;
-      font-size: clamp(15.5px, 1.5vw, 18px);
+      font-size: clamp(16px, 1.6vw, 19px);
       line-height: 1.85;
       max-width: 68ch;
-      margin: 0 0 28px;
+      margin: 0 0 32px;
     }
 
     /* nav */
@@ -146,46 +146,46 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 14px;
-      padding: 12px 0;
+      gap: 16px;
+      padding: 14px 0;
     }
     .brand{
       display:flex; align-items:center; gap: 12px;
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 16px;
+      font-size: 17px;
       letter-spacing: 0.01em;
     }
     .mark{
-      width: 38px; height: 38px;
-      border-radius: 11px;
+      width: 40px; height: 40px;
+      border-radius: 12px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       display:grid; place-items:center;
       color: color-mix(in oklab, var(--bg) 86%, black);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 900;
       box-shadow: 0 10px 30px rgba(185,162,255,0.20);
     }
     .brand small{
       display:block;
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      font-weight: 600;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
       color: var(--dim);
-      letter-spacing: .08em;
-      margin-top: -1px;
+      letter-spacing: .04em;
+      margin-top: 1px;
     }
     .navlinks{
-      display:flex; align-items:center; gap: 6px;
+      display:flex; align-items:center; gap: 2px;
       font-family: var(--font-display);
       font-weight: 600;
-      font-size: 14.5px;
+      font-size: 15px;
       letter-spacing: .01em;
       color: var(--muted);
     }
     .navlinks a{
-      padding: 7px 16px;
-      border-radius: 999px;
+      padding: 8px 18px;
+      border-radius: 10px;
       border: 1px solid transparent;
       transition: background .2s ease, color .2s ease, border-color .2s ease;
     }
@@ -205,14 +205,14 @@
     }
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap: 10px;
-      padding: 10px 18px;
+      padding: 10px 20px;
       border-radius: 12px;
       border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text);
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 14px;
+      font-size: 14.5px;
       letter-spacing: .01em;
       white-space: nowrap;
       transition: transform .2s ease, background .2s ease, border-color .2s ease;
@@ -231,6 +231,9 @@
     }
 
     .menu{
+      display:none;
+    }
+    .drawer{
       display:none;
     }
 
@@ -260,10 +263,10 @@
     }
     .sub{
       color: var(--muted);
-      font-size: clamp(15.5px, 1.5vw, 19px);
+      font-size: clamp(16px, 1.6vw, 19px);
       line-height: 1.85;
       max-width: 68ch;
-      margin: 0 0 24px;
+      margin: 0 0 28px;
     }
     .hero-actions{
       display:flex; flex-wrap:wrap; gap: 12px;
@@ -302,14 +305,14 @@
     .pnum.c-good{ color: var(--good); }
     .plabel{
       color: var(--dim);
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 600;
       letter-spacing: .03em;
     }
     .psub{
       margin-top: 6px;
       font-family: var(--font-mono);
-      font-size: 11.5px;
+      font-size: 12px;
       color: color-mix(in oklab, var(--accent) 72%, var(--dim));
       letter-spacing: .05em;
     }
@@ -346,14 +349,14 @@
     .mini h3{
       font-family: var(--font-display);
       margin:0;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 700;
       letter-spacing: .01em;
     }
     .mini p{
       margin: 7px 0 0;
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 14.5px;
+      line-height: 1.75;
       color: var(--muted);
     }
     .pillrow{
@@ -362,7 +365,7 @@
     }
     .pill{
       font-family: var(--font-mono);
-      font-size: 11.5px;
+      font-size: 12px;
       padding: 6px 12px;
       border-radius: 999px;
       border: 1px solid var(--border);
@@ -429,15 +432,15 @@
     .feature h3{
       margin:0;
       font-family: var(--font-display);
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: -0.01em;
     }
     .feature p{
       margin: 8px 0 0;
       color: var(--muted);
-      font-size: 14.5px;
-      line-height: 1.8;
+      font-size: 15px;
+      line-height: 1.85;
     }
 
     /* timeline */
@@ -456,22 +459,22 @@
     .twhen{
       min-width: 142px;
       font-family: var(--font-mono);
-      font-size: 12px;
+      font-size: 12.5px;
       color: var(--dim);
       letter-spacing: .05em;
     }
     .tmain h4{
       margin: 0;
       font-family: var(--font-display);
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 700;
       letter-spacing: .01em;
     }
     .tmain p{
       margin: 7px 0 0;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.75;
+      font-size: 15px;
+      line-height: 1.8;
     }
     .tmain .tags{
       margin-top: 9px;
@@ -499,7 +502,7 @@
       margin: 0;
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 22px;
+      font-size: 24px;
       letter-spacing: -0.02em;
     }
     .price{
@@ -512,8 +515,8 @@
     }
     .note{
       color: var(--muted);
-      font-size: 15px;
-      line-height: 1.8;
+      font-size: 15.5px;
+      line-height: 1.85;
       margin: 0 0 16px;
       max-width: 68ch;
     }
@@ -541,20 +544,20 @@
       margin-top: 6px;
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 15px;
+      font-size: 15.5px;
     }
     .step .s{
       margin-top: 5px;
       color: var(--muted);
-      font-size: 13.5px;
-      line-height: 1.65;
+      font-size: 14px;
+      line-height: 1.7;
     }
 
     /* track labels */
     .track-label{
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 20px;
+      font-size: 21px;
       letter-spacing: -0.01em;
       margin: 0 0 16px;
       display:flex; align-items:center; gap: 12px;
@@ -584,15 +587,15 @@
     .prod h3{
       margin: 0 0 8px;
       font-family: var(--font-display);
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: -0.01em;
     }
     .prod p{
       margin: 0;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.75;
+      font-size: 15px;
+      line-height: 1.8;
     }
     .prod-tags{
       display:flex; flex-wrap:wrap; gap: 6px;
@@ -600,8 +603,8 @@
     }
     .ptag{
       font-family: var(--font-mono);
-      font-size: 11px;
-      padding: 4px 9px;
+      font-size: 11.5px;
+      padding: 5px 10px;
       border-radius: 6px;
       background: color-mix(in oklab, var(--accent) 12%, var(--surface));
       color: var(--accent);
@@ -613,14 +616,14 @@
     }
     .prod-cta a{
       display:inline-flex; align-items:center; gap: 8px;
-      padding: 12px 24px;
+      padding: 12px 26px;
       border-radius: 12px;
       border: 1px solid color-mix(in oklab, var(--accent) 36%, var(--border));
       background: var(--surface);
       color: var(--accent);
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 14.5px;
+      font-size: 15px;
       letter-spacing: .01em;
       transition: transform .2s ease, background .2s ease;
     }
@@ -661,7 +664,7 @@
       border-top: 1px solid var(--border);
       padding: 24px 0 28px;
       color: var(--dim);
-      font-size: 13px;
+      font-size: 13.5px;
     }
     footer .frow{
       display:flex; justify-content:space-between; align-items:flex-start;
@@ -673,7 +676,7 @@
     .flinks a{
       font-family:var(--font-display);
       font-weight:700;
-      font-size:13px;
+      font-size:14px;
       letter-spacing:.02em;
       transition: color .2s ease;
     }
