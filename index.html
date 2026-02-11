@@ -3,897 +3,179 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>瀬田 博之 | コンサルタント × アプリ開発者（建設×会計×AI）</title>
-  <meta name="description" content="建設DXコンサルティングと爆速アプリ開発。28年のIT・業務改革経験で、構想を動くアプリと運用に落とし込みます。"/>
-  <meta name="theme-color" content="#0b0f14" />
-  <meta property="og:title" content="瀬田 博之 | コンサルタント × アプリ開発者（建設×会計×AI）" />
-  <meta property="og:description" content="建設DXコンサルティングと爆速アプリ開発。構想→検証→運用まで一気通貫で伴走します。" />
+  <title>Erik Arthur | コンサルタント × アプリ開発者</title>
+  <meta name="description" content="28年のIT・業務改革経験を持つコンサルタント兼アプリ開発者。建設DX、会計、AI活用で構想を動くアプリと運用に落とし込みます。" />
+  <meta name="theme-color" content="#0a0e14" />
+  <meta property="og:title" content="Erik Arthur | コンサルタント × アプリ開発者" />
+  <meta property="og:description" content="戦略を描く人と作る人が同一だから、前進が速い。28年のIT・業務改革経験で構想を実装に。" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ja_JP" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg: #0b0f14;
-      --surface: rgba(255,255,255,0.04);
-      --surface-2: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.10);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.68);
-      --dim: rgba(255,255,255,0.48);
-
-      --accent: #b9a2ff;
-      --accent2: #6ae4ff;
-      --gold: #f4d17a;
-      --good: #7ef0b0;
-
-      --shadow: 0 18px 60px rgba(0,0,0,0.45);
-      --radius-xl: 22px;
-      --radius-lg: 16px;
-      --radius-md: 12px;
-
-      --font-display: "Outfit", "Noto Sans JP", system-ui, sans-serif;
-      --font-body: "Noto Sans JP", system-ui, sans-serif;
-      --font-serif: "Noto Serif JP", serif;
-      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
-      --max: 1160px;
-      --pad: clamp(18px, 3.2vw, 44px);
-    }
-
-    html[data-theme="light"]{
-      --bg: #f7f6f3;
-      --surface: rgba(15,18,22,0.04);
-      --surface-2: rgba(15,18,22,0.06);
-      --border: rgba(15,18,22,0.10);
-      --text: rgba(15,18,22,0.92);
-      --muted: rgba(15,18,22,0.68);
-      --dim: rgba(15,18,22,0.52);
-      --shadow: 0 18px 60px rgba(12,14,16,0.12);
-    }
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      overflow-x:hidden;
-    }
-
-    body::before{
-      content:"";
-      position:fixed; inset:0;
-      background:
-        radial-gradient(1200px 800px at 10% 10%, rgba(185,162,255,0.13), transparent 55%),
-        radial-gradient(900px 700px at 85% 25%, rgba(106,228,255,0.11), transparent 55%),
-        radial-gradient(1000px 700px at 55% 95%, rgba(244,209,122,0.08), transparent 60%),
-        linear-gradient(to bottom, rgba(255,255,255,0.05), transparent 28%),
-        linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: auto, auto, auto, auto, 92px 92px, 92px 92px;
-      background-position: 0 0, 0 0, 0 0, 0 0, -1px -1px, -1px -1px;
-      pointer-events:none;
-      opacity: 0.85;
-      z-index:-2;
-    }
-    body::after{
-      content:"";
-      position:fixed; inset:0;
-      pointer-events:none;
-      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-      z-index:-1;
-    }
-
-    a{ color:inherit; text-decoration:none; }
-    .skip{
-      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
-    }
-    .skip:focus{
-      left: 16px; top: 16px; width:auto; height:auto;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      padding: 10px 12px;
-      border-radius: 10px;
-      z-index: 9999;
-    }
-
-    .wrap{ max-width: var(--max); margin:0 auto; padding: 0 var(--pad); }
-    .section{ padding: clamp(56px, 8vw, 96px) 0; }
-    .kicker{
-      font-family: var(--font-mono);
-      font-size: 13.5px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      opacity: 0.95;
-    }
-    .h2{
-      font-family: var(--font-display);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      line-height: 1.2;
-      font-size: clamp(26px, 3.6vw, 44px);
-      margin: 16px 0 12px;
-    }
-    .lead{
-      color: var(--muted);
-      font-weight: 400;
-      font-size: clamp(16px, 1.6vw, 19px);
-      line-height: 1.85;
-      max-width: 68ch;
-      margin: 0 0 32px;
-    }
-
-    /* nav */
-    .nav{
-      position: sticky;
-      top:0;
-      z-index: 50;
-      backdrop-filter: blur(18px);
-      background: color-mix(in oklab, var(--bg) 76%, transparent);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-in{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 16px;
-      padding: 14px 0;
-    }
-    .brand{
-      display:flex; align-items:center; gap: 12px;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 17px;
-      letter-spacing: 0.01em;
-    }
-    .mark{
-      width: 40px; height: 40px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display:grid; place-items:center;
-      color: color-mix(in oklab, var(--bg) 86%, black);
-      font-size: 14px;
-      font-weight: 900;
-      box-shadow: 0 10px 30px rgba(185,162,255,0.20);
-    }
-    .brand small{
-      display:block;
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--dim);
-      letter-spacing: .04em;
-      margin-top: 1px;
-    }
-    .navlinks{
-      display:flex; align-items:center; gap: 2px;
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 15px;
-      letter-spacing: .01em;
-      color: var(--muted);
-    }
-    .navlinks a{
-      padding: 8px 18px;
-      border-radius: 10px;
-      border: 1px solid transparent;
-      transition: background .2s ease, color .2s ease, border-color .2s ease;
-    }
-    .navlinks a:hover{
-      background: var(--surface-2);
-      color: var(--text);
-      border-color: var(--border);
-    }
-    .navlinks a.active{
-      background: color-mix(in oklab, var(--accent) 14%, var(--surface));
-      color: var(--accent);
-      border-color: color-mix(in oklab, var(--accent) 28%, var(--border));
-    }
-
-    .cta{
-      display:flex; gap: 10px; align-items:center;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap: 10px;
-      padding: 10px 20px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 14.5px;
-      letter-spacing: .01em;
-      white-space: nowrap;
-      transition: transform .2s ease, background .2s ease, border-color .2s ease;
-      cursor:pointer;
-    }
-    .btn:hover{ transform: translateY(-1px); border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
-    .btn.primary{
-      border-color: color-mix(in oklab, var(--accent) 42%, var(--border));
-      background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 88%, white), color-mix(in oklab, var(--accent2) 88%, white));
-      color: color-mix(in oklab, var(--bg) 92%, black);
-      box-shadow: 0 18px 50px rgba(106,228,255,0.16);
-    }
-    .btn.primary:hover{ transform: translateY(-2px); }
-    .icon{
-      width: 18px; height: 18px; display:inline-block;
-    }
-
-    .menu{
-      display:none;
-    }
-    .drawer{
-      display:none;
-    }
-
-    /* hero */
-    .hero{
-      padding: clamp(44px, 6vw, 74px) 0 22px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: clamp(18px, 3vw, 34px);
-      align-items: start;
-    }
-    .title{
-      font-family: var(--font-display);
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      line-height: 1.08;
-      font-size: clamp(36px, 5.4vw, 68px);
-      margin: 16px 0 14px;
-    }
-    .title .grad{
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text; background-clip:text;
-      -webkit-text-fill-color: transparent;
-      text-fill-color: transparent;
-    }
-    .sub{
-      color: var(--muted);
-      font-size: clamp(16px, 1.6vw, 19px);
-      line-height: 1.85;
-      max-width: 68ch;
-      margin: 0 0 28px;
-    }
-    .hero-actions{
-      display:flex; flex-wrap:wrap; gap: 12px;
-      margin: 10px 0 18px;
-    }
-
-    .proofbar{
-      display:grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 22px;
-    }
-    .proof{
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 16px 16px 14px;
-      box-shadow: none;
-      transition: transform .25s ease, border-color .25s ease, background .25s ease;
-    }
-    .proof:hover{
-      transform: translateY(-2px);
-      border-color: color-mix(in oklab, var(--accent) 32%, var(--border));
-      background: var(--surface-2);
-    }
-    .pnum{
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 28px;
-      letter-spacing: -0.02em;
-      margin: 0 0 4px;
-    }
-    .pnum.c-accent{ color: var(--accent); }
-    .pnum.c-gold{ color: var(--gold); }
-    .pnum.c-cyan{ color: var(--accent2); }
-    .pnum.c-good{ color: var(--good); }
-    .plabel{
-      color: var(--dim);
-      font-size: 13.5px;
-      font-weight: 600;
-      letter-spacing: .03em;
-    }
-    .psub{
-      margin-top: 6px;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: color-mix(in oklab, var(--accent) 72%, var(--dim));
-      letter-spacing: .05em;
-    }
-
-    .card{
-      border: 1px solid var(--border);
-      background: color-mix(in oklab, var(--surface) 86%, transparent);
-      border-radius: var(--radius-xl);
-      padding: 20px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow:hidden;
-    }
-    .card::before{
-      content:"";
-      position:absolute; inset:-80px -80px auto auto;
-      width: 220px; height:220px;
-      background: radial-gradient(circle, rgba(185,162,255,0.25), transparent 70%);
-      filter: blur(8px);
-      pointer-events:none;
-      transform: rotate(20deg);
-    }
-
-    .profile{
-      display:flex; flex-direction:column; gap: 12px;
-    }
-
-    .mini{
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px 14px 12px;
-      background: var(--surface);
-    }
-    .mini h3{
-      font-family: var(--font-display);
-      margin:0;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: .01em;
-    }
-    .mini p{
-      margin: 7px 0 0;
-      font-size: 14.5px;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-    .pillrow{
-      display:flex; flex-wrap:wrap; gap: 8px;
-      margin-top: 10px;
-    }
-    .pill{
-      font-family: var(--font-mono);
-      font-size: 12px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: color-mix(in oklab, var(--surface) 92%, transparent);
-      color: var(--muted);
-    }
-
-    /* quote band */
-    .band{
-      margin: 26px 0 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: color-mix(in oklab, var(--surface) 70%, transparent);
-      padding: 24px 0;
-    }
-    .quote{
-      font-family: var(--font-serif);
-      font-weight: 700;
-      font-size: clamp(17px, 2.2vw, 24px);
-      letter-spacing: -0.01em;
-      line-height: 1.6;
-      margin: 0;
-      color: var(--text);
-    }
-    .quote .hi{ color: var(--gold); }
-    .qsub{
-      margin-top: 10px;
-      color: var(--dim);
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: .08em;
-    }
-
-    /* grids */
-    .grid-3{ display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-    .grid-2{ display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-
-    .feature{
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 18px;
-      transition: transform .25s ease, border-color .25s ease, background .25s ease;
-      position:relative;
-      overflow:hidden;
-    }
-    .feature:hover{
-      transform: translateY(-2px);
-      border-color: color-mix(in oklab, var(--accent2) 28%, var(--border));
-      background: var(--surface-2);
-    }
-    .feature .top{
-      display:flex; gap: 10px; align-items:center;
-      margin-bottom: 10px;
-    }
-    .badge{
-      width: 36px; height: 36px;
-      border-radius: 12px;
-      display:grid; place-items:center;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-      font-size: 16px;
-    }
-    .feature h3{
-      margin:0;
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-    .feature p{
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.85;
-    }
-
-    /* timeline */
-    .timeline{
-      display:flex; flex-direction:column; gap: 12px;
-    }
-    .titem{
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: 16px;
-      padding: 16px 16px 14px;
-      display:flex;
-      gap: 12px;
-      align-items:flex-start;
-    }
-    .twhen{
-      min-width: 142px;
-      font-family: var(--font-mono);
-      font-size: 12.5px;
-      color: var(--dim);
-      letter-spacing: .05em;
-    }
-    .tmain h4{
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: .01em;
-    }
-    .tmain p{
-      margin: 7px 0 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.8;
-    }
-    .tmain .tags{
-      margin-top: 9px;
-      display:flex; flex-wrap:wrap; gap: 8px;
-    }
-
-    /* services */
-    .offer{
-      border: 1px solid color-mix(in oklab, var(--accent) 30%, var(--border));
-      background: linear-gradient(135deg, color-mix(in oklab, var(--surface) 86%, transparent), rgba(185,162,255,0.10));
-      border-radius: 22px;
-      padding: 22px;
-      position:relative;
-      overflow:hidden;
-    }
-    .offer::before{
-      content:"";
-      position:absolute; inset:-120px -120px auto auto;
-      width: 300px; height:300px;
-      background: radial-gradient(circle, rgba(106,228,255,0.22), transparent 70%);
-      filter: blur(10px);
-      pointer-events:none;
-    }
-    .offer h3{
-      margin: 0;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 24px;
-      letter-spacing: -0.02em;
-    }
-    .price{
-      margin: 12px 0 12px;
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(22px, 2.8vw, 30px);
-      letter-spacing: -0.02em;
-      color: var(--accent2);
-    }
-    .note{
-      color: var(--muted);
-      font-size: 15.5px;
-      line-height: 1.85;
-      margin: 0 0 16px;
-      max-width: 68ch;
-    }
-    .flow{
-      display:grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .step{
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-      border-radius: 16px;
-      padding: 14px;
-      position:relative;
-      overflow:hidden;
-    }
-    .step .d{
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      letter-spacing: .12em;
-      color: var(--dim);
-    }
-    .step .l{
-      margin-top: 6px;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 15.5px;
-    }
-    .step .s{
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    /* track labels */
-    .track-label{
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 21px;
-      letter-spacing: -0.01em;
-      margin: 0 0 16px;
-      display:flex; align-items:center; gap: 12px;
-    }
-    .track-label .ticon{
-      width: 32px; height: 32px;
-      border-radius: 10px;
-      display:grid; place-items:center;
-      font-size: 14px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-    }
-
-    /* product cards */
-    .prod{
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 18px;
-      transition: transform .25s ease, border-color .25s ease, background .25s ease;
-    }
-    .prod:hover{
-      transform: translateY(-2px);
-      border-color: color-mix(in oklab, var(--accent) 28%, var(--border));
-      background: var(--surface-2);
-    }
-    .prod h3{
-      margin: 0 0 8px;
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-    .prod p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.8;
-    }
-    .prod-tags{
-      display:flex; flex-wrap:wrap; gap: 6px;
-      margin-bottom: 10px;
-    }
-    .ptag{
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      padding: 5px 10px;
-      border-radius: 6px;
-      background: color-mix(in oklab, var(--accent) 12%, var(--surface));
-      color: var(--accent);
-      letter-spacing: .03em;
-    }
-    .prod-cta{
-      margin-top: 18px;
-      text-align: center;
-    }
-    .prod-cta a{
-      display:inline-flex; align-items:center; gap: 8px;
-      padding: 12px 26px;
-      border-radius: 12px;
-      border: 1px solid color-mix(in oklab, var(--accent) 36%, var(--border));
-      background: var(--surface);
-      color: var(--accent);
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 15px;
-      letter-spacing: .01em;
-      transition: transform .2s ease, background .2s ease;
-    }
-    .prod-cta a:hover{
-      transform: translateY(-1px);
-      background: color-mix(in oklab, var(--accent) 10%, var(--surface));
-    }
-
-    /* contact */
-    .contact{
-      text-align:center;
-      padding-bottom: 82px;
-    }
-    .mail{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      margin-top: 14px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      border: 1px solid color-mix(in oklab, var(--accent) 26%, var(--border));
-      background: var(--surface);
-      font-family: var(--font-display);
-      font-weight: 800;
-      letter-spacing: .02em;
-      color: var(--text);
-      cursor: pointer;
-      user-select:none;
-    }
-    .mail small{
-      font-family: var(--font-mono);
-      font-weight: 600;
-      color: var(--dim);
-      letter-spacing: .10em;
-    }
-
-    footer{
-      border-top: 1px solid var(--border);
-      padding: 24px 0 28px;
-      color: var(--dim);
-      font-size: 13.5px;
-    }
-    footer .frow{
-      display:flex; justify-content:space-between; align-items:flex-start;
-      gap: 14px; flex-wrap:wrap;
-    }
-    .flinks{
-      display:flex; gap:18px; align-items:center; flex-wrap:wrap;
-    }
-    .flinks a{
-      font-family:var(--font-display);
-      font-weight:700;
-      font-size:14px;
-      letter-spacing:.02em;
-      transition: color .2s ease;
-    }
-    .flinks a:hover{ color: var(--text); }
-    .legal{
-      font-family: var(--font-mono);
-      letter-spacing: .08em;
-    }
-
-    /* reveal */
-    .reveal{ opacity:0; transform: translateY(18px); transition: opacity .75s ease, transform .75s ease; }
-    .reveal.in{ opacity:1; transform: translateY(0); }
-
-    /* responsive */
-    @media (max-width: 980px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .proofbar{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .grid-3{ grid-template-columns: 1fr; }
-      .grid-2{ grid-template-columns: 1fr; }
-      .flow{ grid-template-columns: 1fr; }
-      .navlinks{ display:none; }
-      .menu{ display:inline-flex; }
-      .drawer{
-        position: fixed;
-        inset: 0;
-        display:none;
-        background: rgba(0,0,0,0.55);
-        z-index: 60;
-      }
-      html[data-theme="light"] .drawer{ background: rgba(15,18,22,0.35); }
-      .drawer.in{ display:block; }
-      .panel{
-        position:absolute; right: 12px; top: 64px;
-        width: min(360px, calc(100vw - 24px));
-        border-radius: 18px;
-        border: 1px solid var(--border);
-        background: var(--bg);
-        box-shadow: var(--shadow);
-        padding: 12px;
-        overflow:hidden;
-      }
-      .panel a{
-        display:block;
-        padding: 14px 16px;
-        border-radius: 12px;
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 16px;
-        color: var(--muted);
-      }
-      .panel a:hover{ background: var(--surface); color: var(--text); }
-      .panel .sep{ height:1px; background: var(--border); margin: 6px 0; }
-    }
-
-    @media (max-width: 520px){
-      .cta{ flex-wrap: wrap; justify-content: flex-end; }
-    }
-
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 <a class="skip" href="#main">本文へスキップ</a>
 
 <header class="nav">
-  <div class="wrap nav-in">
+  <div class="wrap nav-inner">
     <a class="brand" href="#">
-      <span class="mark">EA</span>
+      <span class="brand-mark">EA</span>
       <span>
-        Erik Arthur <small>コンサルタント ×<br>アプリ開発者</small>
+        Erik Arthur
+        <small>Consultant × Developer</small>
       </span>
     </a>
 
     <nav class="navlinks" aria-label="Primary">
+      <a href="#about">プロフィール</a>
       <a href="#strength">強み</a>
       <a href="#work">実績</a>
       <a href="#services">サービス</a>
-      <a href="#products">プロダクト</a>
       <a href="#career">経歴</a>
-      <a href="#contact">連絡</a>
     </nav>
 
-    <div class="cta">
-      <button class="btn" id="themeBtn" type="button" aria-label="テーマ切替">
-        <span class="icon" aria-hidden="true">◐</span>
-        Theme
-      </button>
-      <a class="btn primary" href="#contact">
-        <span class="icon" aria-hidden="true">✦</span>
-        相談する
-      </a>
-      <button class="btn menu" id="menuBtn" type="button" aria-label="メニュー">
-        <span class="icon" aria-hidden="true">☰</span>
-        Menu
-      </button>
+    <div class="nav-actions">
+      <button class="btn-icon" id="themeBtn" type="button" aria-label="テーマ切替">◐</button>
+      <a class="btn btn-primary" href="#contact">相談する</a>
+      <button class="btn-icon menu-toggle" id="menuBtn" type="button" aria-label="メニュー">☰</button>
     </div>
   </div>
 
   <div class="drawer" id="drawer" aria-hidden="true">
-    <div class="panel" role="dialog" aria-label="Mobile Menu">
+    <div class="drawer-panel" role="dialog" aria-label="メニュー">
+      <a href="#about">プロフィール</a>
       <a href="#strength">強み</a>
       <a href="#work">実績</a>
       <a href="#services">サービス</a>
-      <a href="#products">プロダクト</a>
       <a href="#career">経歴</a>
       <a href="#contact">連絡</a>
-      <div class="sep"></div>
+      <div class="drawer-sep"></div>
       <a href="#" id="closeDrawer">閉じる</a>
     </div>
   </div>
 </header>
 
 <main id="main">
-  <!-- HERO -->
+
+  <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <div class="kicker reveal">Consultant × App Developer / 建設×会計×AI</div>
-          <h1 class="title reveal">
-  <span class="grad">コンサルティング</span>と<br>
-  <span class="grad">爆速開発</span>を、一人で。
-</h1>
-          <p class="sub reveal">
-  28年のIT・業務改革経験を持つコンサルタントであり、120以上のプロジェクトを手がけるアプリ開発者。
-  建設DXの現場感と会計の数字、そしてAI/自動化の実装力をつなぎ、
-  <b>構想を動くアプリと運用</b>に落とし込みます。<br>
-  「戦略を描く人」と「作る人」が同一だから、前進が速い。
-</p>
+      <p class="kicker reveal">Consultant × App Developer</p>
+      <h1 class="hero-title reveal">
+        <span class="grad">戦略を描き、</span><br>
+        <span class="grad">自ら作る。</span>
+      </h1>
+      <p class="hero-sub reveal">
+        28年のIT・業務改革経験を持つコンサルタントであり、<br class="hide-sp">
+        120以上のプロジェクトを手がけるアプリ開発者。<br>
+        「考える人」と「作る人」が同一だから、前進が速い。
+      </p>
 
-          <div class="hero-actions reveal">
-            <a class="btn primary" href="#services"><span class="icon" aria-hidden="true">⚡</span>サービスを見る</a>
-            <a class="btn" href="#products"><span class="icon" aria-hidden="true">▦</span>プロダクト一覧</a>
-            <a class="btn" href="#work"><span class="icon" aria-hidden="true">⟡</span>実績を見る</a>
-          </div>
-
-          <div class="proofbar reveal" aria-label="Key numbers">
-  <div class="proof">
-    <div class="pnum c-accent">28年+</div>
-    <div class="plabel">IT・業務改革</div>
-    <div class="psub">Since 1997</div>
-  </div>
-  <div class="proof">
-    <div class="pnum c-cyan">5.6倍</div>
-    <div class="plabel">建設DX事業成長</div>
-    <div class="psub">3年で売上5.6倍</div>
-  </div>
-  <div class="proof">
-    <div class="pnum c-gold">120+</div>
-    <div class="plabel">開発プロジェクト</div>
-    <div class="psub">GitHub Repos</div>
-  </div>
-  <div class="proof">
-    <div class="pnum c-good">~40冊</div>
-    <div class="plabel">著書</div>
-    <div class="psub">1-2ヶ月で執筆</div>
-  </div>
-</div>
-</div>
-
-        <aside class="card reveal">
-          <div class="profile">
-            <div class="mini">
-              <h3>2つの顔</h3>
-              <p><b>コンサルタント</b> — 建設DX / 会計 / 業務改革 / 組織づくり</p>
-              <p><b>アプリ開発者</b> — 爆速プロトタイプ / AI活用 / プロダクト開発</p>
-              <div class="pillrow" aria-label="tags">
-                <span class="pill">建設DX</span>
-                <span class="pill">会計・管理会計</span>
-                <span class="pill">爆速開発</span>
-                <span class="pill">AI活用</span>
-                <span class="pill">日英対応</span>
-              </div>
-            </div>
-
-            <div class="mini">
-              <h3>組織</h3>
-              <p><b>Harmonic Insight</b>（法人） — プロダクト開発・AI事業</p>
-              <p><b>個人事業主</b> — コンサルティング・執筆</p>
-            </div>
-
-            <div class="mini">
-              <h3>資格・認定（抜粋）</h3>
-              <p>PMP / 宅地建物取引士 / 日英ビジネス対応 / Google Data Analytics / ビジネス特許保有</p>
-            </div>
-          </div>
-        </aside>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="#services">サービスを見る</a>
+        <a class="btn btn-outline" href="#work">実績を見る</a>
       </div>
-    </div>
 
-    <div class="band">
-      <div class="wrap">
-        <p class="quote reveal">
-          「速くできる＝安くていい」ではない。<span class="hi">速くできること自体がプレミアム。</span><br>
-          構造化された知見が、開発速度を再定義する。
-        </p>
-        <div class="qsub reveal">— 戦略・会計・現場・AIを一気通貫で扱えるから、前進が速い。</div>
+      <div class="stats-bar reveal">
+        <div class="stat">
+          <div class="stat-num accent">28年+</div>
+          <div class="stat-label">IT・業務改革</div>
+          <div class="stat-sub">Since 1997</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num cyan">5.6倍</div>
+          <div class="stat-label">建設DX事業成長</div>
+          <div class="stat-sub">3年で売上5.6倍</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num gold">120+</div>
+          <div class="stat-label">開発プロジェクト</div>
+          <div class="stat-sub">GitHub Repos</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num green">~40冊</div>
+          <div class="stat-label">著書</div>
+          <div class="stat-sub">1-2ヶ月で執筆</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- STRENGTH -->
+  <!-- ===== QUOTE BAND ===== -->
+  <div class="band">
+    <div class="wrap">
+      <blockquote class="quote reveal">
+        「速くできる＝安くていい」ではない。<span class="q-hi">速くできること自体がプレミアム。</span><br>
+        構造化された知見が、開発速度を再定義する。
+      </blockquote>
+      <p class="quote-attr reveal">— 戦略・会計・現場・AIを一気通貫で扱えるから、前進が速い。</p>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <div class="wrap">
+      <p class="kicker reveal">Profile</p>
+      <h2 class="section-title reveal">瀬田 博之 / Erik Arthur</h2>
+      <p class="section-lead reveal">
+        コンサルタントとアプリ開発者の2つの顔を持つ個人。
+        建設DX・会計・AI活用を軸に、構想を動く仕組みに変えます。
+      </p>
+
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <div class="about-card-icon">🎯</div>
+          <h3>コンサルタント</h3>
+          <p>建設DX / 会計・管理会計 / 業務改革 / 組織づくり</p>
+          <div class="pill-row">
+            <span class="pill">建設DX</span>
+            <span class="pill">会計・管理会計</span>
+            <span class="pill">PL運営</span>
+          </div>
+        </div>
+
+        <div class="about-card reveal">
+          <div class="about-card-icon">⚡</div>
+          <h3>アプリ開発者</h3>
+          <p>爆速プロトタイプ / AI活用 / プロダクト開発 / フルスタック</p>
+          <div class="pill-row">
+            <span class="pill">爆速開発</span>
+            <span class="pill">AI活用</span>
+            <span class="pill">日英対応</span>
+          </div>
+        </div>
+
+        <div class="about-card about-card-wide reveal">
+          <h3>資格・認定（抜粋）</h3>
+          <div class="pill-row">
+            <span class="pill pill-accent">PMP</span>
+            <span class="pill pill-accent">宅地建物取引士</span>
+            <span class="pill pill-accent">Google Data Analytics</span>
+            <span class="pill pill-accent">ビジネス特許保有</span>
+            <span class="pill pill-accent">日英ビジネス対応</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STRENGTH ===== -->
   <section id="strength" class="section">
     <div class="wrap">
-      <div class="kicker reveal">Two strengths</div>
-      <h2 class="h2 reveal">コンサルティング × プロダクト開発</h2>
-      <p class="lead reveal">
+      <p class="kicker reveal">Two Strengths</p>
+      <h2 class="section-title reveal">コンサルティング × プロダクト開発</h2>
+      <p class="section-lead reveal">
         「戦略を描く」と「作って動かす」を同一人物が担うから、伝言ゲームがなく、前進が速い。
-        業界を問わない爆速開発力と、建設・会計に特化したコンサルティング力の両輪で回します。
       </p>
 
       <div class="grid-3">
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">🏗️</div>
-            <h3>コンサルティング力</h3>
-          </div>
+        <div class="card reveal">
+          <div class="card-badge">🏗️</div>
+          <h3>コンサルティング力</h3>
           <p>
             建設DX事業を3年で5.6倍に成長させた実績。スーパーゼネコン〜中堅まで多数支援。
             連結会計・管理会計にも精通し、PL設計から運用まで一気通貫。
@@ -901,84 +183,69 @@
           </p>
         </div>
 
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">⚡</div>
-            <h3>爆速の開発力</h3>
-          </div>
+        <div class="card reveal">
+          <div class="card-badge">⚡</div>
+          <h3>爆速の開発力</h3>
           <p>
             120以上のプロジェクト、約40冊の著書。3日で5つのアプリを開発した実績。
             共通基盤が洗練されているから、新しいプロジェクトほど速くなる。
-            構造が頭にあるから迷わない。
           </p>
         </div>
 
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">🔗</div>
-            <h3>"作れるコンサル"の価値</h3>
-          </div>
+        <div class="card reveal">
+          <div class="card-badge">🔗</div>
+          <h3>"作れるコンサル"の価値</h3>
           <p>
             戦略を描いたその日にプロトタイプを作れる。
             要件定義と実装の間のロスがゼロだから、意思決定→検証→改善のサイクルが圧倒的に速い。
-            DXは"資料"では進まない。動く仕組みを早く作り、現場で磨く。
           </p>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- WORK / ACHIEVEMENTS -->
+  <!-- ===== WORK / ACHIEVEMENTS ===== -->
   <section id="work" class="section">
     <div class="wrap">
-      <div class="kicker reveal">Proof</div>
-      <h2 class="h2 reveal">実績</h2>
-      <p class="lead reveal">
+      <p class="kicker reveal">Proof</p>
+      <h2 class="section-title reveal">実績</h2>
+      <p class="section-lead reveal">
         守秘義務・就業規定の都合で社名・案件名・金額などは非開示ですが、
         再現性のある「やり方」と「成果の型」を中心に記載しています。
       </p>
 
       <div class="grid-2">
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">📈</div>
-            <h3>建設DX事業の立ち上げ・拡大</h3>
-          </div>
+        <div class="card reveal">
+          <div class="card-badge">📈</div>
+          <h3>建設DX事業の立ち上げ・拡大</h3>
           <p>
             ゼロから建設DX事業を創設し、3年で売上を5.6倍に拡大。
             20名超の組織を構築し、複数チーム体制へ再編。
-            PL視点で自走する運営（パイプライン/粗利/投資対効果）へ移行。
+            PL視点で自走する運営へ移行。
           </p>
         </div>
 
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">🧩</div>
-            <h3>会計×業務のプロダクト/基盤づくり</h3>
-          </div>
+        <div class="card reveal">
+          <div class="card-badge">🧩</div>
+          <h3>会計×業務のプロダクト基盤づくり</h3>
           <p>
             連結会計パッケージの企画・開発・運用を一気通貫で経験（700社基盤）。
             意思決定と開発の分断をほどき、品質/満足度を上げる仕組みへ再設計。
           </p>
         </div>
 
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">📚</div>
-            <h3>著書 約40冊 / 120+ PJ</h3>
-          </div>
+        <div class="card reveal">
+          <div class="card-badge">📚</div>
+          <h3>著書 約40冊 / 120+ PJ</h3>
           <p>
             28年間で構造化された知識を、本というフォーマットに1〜2ヶ月で変換。
             GitHub上に120以上のプロジェクト。作れば作るほど加速する好循環。
           </p>
         </div>
 
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">🌏</div>
-            <h3>グローバル案件 / 自動化・AI</h3>
-          </div>
+        <div class="card reveal">
+          <div class="card-badge">🌏</div>
+          <h3>グローバル案件 / 自動化・AI</h3>
           <p>
             多国籍チーム/複数拠点での合意形成・デリバリー推進。
             RPA事業の立ち上げ（Partner of the Year受賞）、生成AIのプロトタイプ開発、ビジネス特許取得。
@@ -988,348 +255,258 @@
     </div>
   </section>
 
-
-  <!-- SERVICES -->
+  <!-- ===== SERVICES ===== -->
   <section id="services" class="section">
     <div class="wrap">
-      <div class="kicker reveal">Services</div>
-      <h2 class="h2 reveal">提供サービス</h2>
-      <p class="lead reveal">
+      <p class="kicker reveal">Services</p>
+      <h2 class="section-title reveal">提供サービス</h2>
+      <p class="section-lead reveal">
         「コンサルティング」と「アプリ開発」の2つの軸で、課題の上流から下流まで一貫して対応します。
       </p>
 
       <!-- Track 1: Consulting -->
-      <div class="track-label reveal">
-        <span class="ticon" aria-hidden="true">🎯</span>
-        コンサルティング
+      <div class="track reveal">
+        <div class="track-icon">🎯</div>
+        <h3 class="track-title">コンサルティング</h3>
       </div>
 
       <div class="offer reveal">
         <h3>PoC→本番伴走</h3>
-        <div class="price">2週間〜 / 目的に合わせて個別設計</div>
-        <p class="note">
+        <div class="offer-price">2週間〜 / 目的に合わせて個別設計</div>
+        <p class="offer-desc">
           「何を意思決定できるようにするか」を定義し、最小の仕組みを作って現場で回しながら磨きます。
-          KPI・データ・業務手順・教育まで一本の導線に。
         </p>
-        <div class="flow" aria-label="delivery flow">
-          <div class="step">
-            <div class="d">WEEK 1</div>
-            <div class="l">構造化</div>
-            <div class="s">課題・KPI・業務を整理し、成功条件を決める</div>
+        <div class="flow">
+          <div class="flow-step">
+            <div class="flow-time">WEEK 1</div>
+            <div class="flow-label">構造化</div>
+            <div class="flow-desc">課題・KPI・業務を整理</div>
           </div>
-          <div class="step">
-            <div class="d">WEEK 1-2</div>
-            <div class="l">プロトタイプ</div>
-            <div class="s">動くものを作り、意思決定と現場検証を開始</div>
+          <div class="flow-step">
+            <div class="flow-time">WEEK 1-2</div>
+            <div class="flow-label">プロトタイプ</div>
+            <div class="flow-desc">動くもので検証開始</div>
           </div>
-          <div class="step">
-            <div class="d">WEEK 2-4</div>
-            <div class="l">実装</div>
-            <div class="s">データ連携・運用設計・教育まで含めて整える</div>
+          <div class="flow-step">
+            <div class="flow-time">WEEK 2-4</div>
+            <div class="flow-label">実装</div>
+            <div class="flow-desc">データ連携・運用設計</div>
           </div>
-          <div class="step">
-            <div class="d">ONGOING</div>
-            <div class="l">定着</div>
-            <div class="s">KPI運営・改善サイクルを回せる体制へ</div>
+          <div class="flow-step">
+            <div class="flow-time">ONGOING</div>
+            <div class="flow-label">定着</div>
+            <div class="flow-desc">KPI運営・改善サイクル</div>
           </div>
         </div>
       </div>
 
-      <div style="height:14px"></div>
-
-      <div class="grid-2">
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">🏗️</div>
-            <h3>建設業DXコンサルティング</h3>
-          </div>
+      <div class="grid-2" style="margin-top:14px">
+        <div class="card reveal">
+          <div class="card-badge">🏗️</div>
+          <h3>建設業DXコンサルティング</h3>
           <p>業務診断、DXロードマップ、BIM/基幹刷新、KPI可視化、教育プログラムまで一貫支援。</p>
         </div>
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">📊</div>
-            <h3>会計・管理会計×データ基盤</h3>
-          </div>
+        <div class="card reveal">
+          <div class="card-badge">📊</div>
+          <h3>会計・管理会計×データ基盤</h3>
           <p>PL設計、収益性分析、連結・管理会計の要件整理、データモデル設計、BIの運用設計。</p>
         </div>
       </div>
 
-      <div style="height:32px"></div>
+      <div style="height:36px"></div>
 
       <!-- Track 2: App Development -->
-      <div class="track-label reveal">
-        <span class="ticon" aria-hidden="true">⚡</span>
-        アプリ開発
+      <div class="track reveal">
+        <div class="track-icon">⚡</div>
+        <h3 class="track-title">アプリ開発</h3>
       </div>
 
       <div class="offer reveal">
         <h3>爆速アプリ開発</h3>
-        <div class="price">1週間〜 / 業界問わず対応</div>
-        <p class="note">
+        <div class="offer-price">1週間〜 / 業界問わず対応</div>
+        <p class="offer-desc">
           午前中に要件をヒアリング、午後には動くプロトタイプ。
           28年の業界知識と構造化された共通基盤があるから、正しいものを最速で作れます。
-          コピー展開が可能なプロダクト型のビジネスにも対応。
         </p>
-        <div class="flow" aria-label="development flow">
-          <div class="step">
-            <div class="d">DAY 1</div>
-            <div class="l">ヒアリング</div>
-            <div class="s">業務課題を構造化</div>
+        <div class="flow">
+          <div class="flow-step">
+            <div class="flow-time">DAY 1</div>
+            <div class="flow-label">ヒアリング</div>
+            <div class="flow-desc">業務課題を構造化</div>
           </div>
-          <div class="step">
-            <div class="d">DAY 2-3</div>
-            <div class="l">プロトタイプ</div>
-            <div class="s">動くものでフィードバック</div>
+          <div class="flow-step">
+            <div class="flow-time">DAY 2-3</div>
+            <div class="flow-label">プロトタイプ</div>
+            <div class="flow-desc">動くものでFB</div>
           </div>
-          <div class="step">
-            <div class="d">DAY 4-5</div>
-            <div class="l">開発・調整</div>
-            <div class="s">フル機能実装</div>
+          <div class="flow-step">
+            <div class="flow-time">DAY 4-5</div>
+            <div class="flow-label">開発・調整</div>
+            <div class="flow-desc">フル機能実装</div>
           </div>
-          <div class="step">
-            <div class="d">DAY 6-7</div>
-            <div class="l">納品</div>
-            <div class="s">本番稼働開始</div>
+          <div class="flow-step">
+            <div class="flow-time">DAY 6-7</div>
+            <div class="flow-label">納品</div>
+            <div class="flow-desc">本番稼働開始</div>
           </div>
         </div>
       </div>
 
-      <div style="height:14px"></div>
-
-      <div class="grid-2">
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">🤖</div>
-            <h3>AI活用アプリ開発</h3>
-          </div>
-          <p>Claude API、Stable Diffusion、VOICEVOX等を活用したビジネスアプリの企画・開発。対話型AIから画像生成まで。</p>
+      <div class="grid-2" style="margin-top:14px">
+        <div class="card reveal">
+          <div class="card-badge">🤖</div>
+          <h3>AI活用アプリ開発</h3>
+          <p>Claude API、Stable Diffusion、VOICEVOX等を活用したビジネスアプリの企画・開発。</p>
         </div>
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">🧪</div>
-            <h3>プロダクト/新規事業 0→1</h3>
-          </div>
-          <p>企画・要件・UI/UX・プロトタイプ開発まで。検証を速く回し、投資判断できる状態へ。レバレッジの効くプロダクト型ビジネスの立ち上げを支援。</p>
+        <div class="card reveal">
+          <div class="card-badge">🧪</div>
+          <h3>プロダクト/新規事業 0→1</h3>
+          <p>企画・要件・UI/UX・プロトタイプ開発まで。レバレッジの効くプロダクト型ビジネスの立ち上げを支援。</p>
         </div>
-      </div>
-
-      <div style="height:14px"></div>
-
-      <div class="grid-2">
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">⚙️</div>
-            <h3>RPA・業務自動化</h3>
-          </div>
+        <div class="card reveal">
+          <div class="card-badge">⚙️</div>
+          <h3>RPA・業務自動化</h3>
           <p>既存業務の自動化ソリューション。導入支援から運用・教育・ガバナンスまで整備。</p>
         </div>
-        <div class="feature reveal">
-          <div class="top">
-            <div class="badge" aria-hidden="true">📊</div>
-            <h3>データ分析・BI構築</h3>
-          </div>
+        <div class="card reveal">
+          <div class="card-badge">📊</div>
+          <h3>データ分析・BI構築</h3>
           <p>BIダッシュボード構築、KPI可視化、収益性分析。データドリブンな意思決定を支援。</p>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- PRODUCTS -->
-  <section id="products" class="section">
-    <div class="wrap">
-      <div class="kicker reveal">Insight Series</div>
-      <h2 class="h2 reveal">プロダクト</h2>
-      <p class="lead reveal">
-        業務の深い理解とAI技術を融合した、Harmonic Insightの主力プロダクト群。
-      </p>
-
-      <div class="grid-3">
-        <div class="prod reveal">
-          <div class="prod-tags"><span class="ptag">C#</span><span class="ptag">Python</span></div>
-          <h3>InsightSlide</h3>
-          <p>PowerPointのテキスト抽出・解析ツール。スライド構造を保持したまま高精度抽出。翻訳準備やテキストマイニングに。</p>
-        </div>
-
-        <div class="prod reveal">
-          <div class="prod-tags"><span class="ptag">C#</span><span class="ptag">Claude AI</span></div>
-          <h3>HarmonicDoc</h3>
-          <p>AI搭載Word文書アシスタント。Claude AIとの連携で、文書の作成・編集・要約を支援。</p>
-        </div>
-
-        <div class="prod reveal">
-          <div class="prod-tags"><span class="ptag">C#</span><span class="ptag">WPF</span></div>
-          <h3>HarmonicSheet</h3>
-          <p>シニア向け統合オフィスアプリ。80歳以上でも直感的に操作可能な、文書・表計算・メール統合ツール。</p>
-        </div>
-
-        <div class="prod reveal">
-          <div class="prod-tags"><span class="ptag">TypeScript</span><span class="ptag">Next.js</span></div>
-          <h3>InsightBI</h3>
-          <p>建設業向けBIダッシュボード。売上・粗利・プロジェクト状況をリアルタイムで可視化。</p>
-        </div>
-
-        <div class="prod reveal">
-          <div class="prod-tags"><span class="ptag">TypeScript</span><span class="ptag">Live2D</span></div>
-          <h3>Interview Insight</h3>
-          <p>Live2Dキャラクターが対話を通じて知識を抽出するAIインタビューツール。業務調査を自動化。</p>
-        </div>
-
-        <div class="prod reveal">
-          <div class="prod-tags"><span class="ptag">C#</span><span class="ptag">Stable Diffusion</span></div>
-          <h3>InsightImageGen</h3>
-          <p>Stable DiffusionとVOICEVOXを活用したAI画像・音声生成ツール。</p>
-        </div>
-      </div>
-
-      <div class="prod-cta reveal">
-        <a href="https://www.insight-office.com/ja" target="_blank" rel="noopener">
-          <span aria-hidden="true">→</span>
-          すべてのプロダクトを見る（Insight Office）
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- CAREER -->
+  <!-- ===== CAREER ===== -->
   <section id="career" class="section">
     <div class="wrap">
-      <div class="kicker reveal">Career</div>
-      <h2 class="h2 reveal">経歴（社名・詳細は非開示）</h2>
-      <p class="lead reveal">
+      <p class="kicker reveal">Career</p>
+      <h2 class="section-title reveal">経歴（社名・詳細は非開示）</h2>
+      <p class="section-lead reveal">
         「事業づくり」と「製品づくり」を両方経験。企画・実装・運用を一気通貫で扱えます。
       </p>
 
       <div class="timeline">
-        <div class="titem reveal">
-          <div class="twhen">現在</div>
-          <div class="tmain">
+        <div class="timeline-item reveal">
+          <div class="timeline-when">現在</div>
+          <div class="timeline-body">
             <h4>建設DX領域｜事業構築・組織化</h4>
             <p>建設DX領域で事業を立ち上げ、拡大フェーズの設計（収益軸/体制/パイプライン運営）まで推進。</p>
-            <div class="tags">
-              <span class="pill">事業立ち上げ</span><span class="pill">PL運営</span><span class="pill">建設DX</span>
+            <div class="pill-row">
+              <span class="pill">事業立ち上げ</span>
+              <span class="pill">PL運営</span>
+              <span class="pill">建設DX</span>
             </div>
           </div>
         </div>
 
-        <div class="titem reveal">
-          <div class="twhen">近年</div>
-          <div class="tmain">
+        <div class="timeline-item reveal">
+          <div class="timeline-when">近年</div>
+          <div class="timeline-body">
             <h4>総合コンサル領域｜DX構想・実行</h4>
             <p>DX構想策定、業務整理、システム化、定着支援。新規開拓やタスクフォース参画も経験。</p>
-            <div class="tags">
-              <span class="pill">DX構想</span><span class="pill">要件整理</span><span class="pill">PMO</span>
+            <div class="pill-row">
+              <span class="pill">DX構想</span>
+              <span class="pill">要件整理</span>
+              <span class="pill">PMO</span>
             </div>
           </div>
         </div>
 
-        <div class="titem reveal">
-          <div class="twhen">それ以前</div>
-          <div class="tmain">
+        <div class="timeline-item reveal">
+          <div class="timeline-when">それ以前</div>
+          <div class="timeline-body">
             <h4>グローバルIT/製品開発｜会計・海外・自動化</h4>
             <p>会計領域のプロダクト/基盤、海外事業推進、RPA/自動化の立ち上げなどを担当。</p>
-            <div class="tags">
-              <span class="pill">製品企画・開発</span><span class="pill">グローバル</span><span class="pill">自動化</span>
+            <div class="pill-row">
+              <span class="pill">製品企画・開発</span>
+              <span class="pill">グローバル</span>
+              <span class="pill">自動化</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div style="height:18px"></div>
-
-      <div class="grid-2">
-        <div class="feature reveal">
-          <div class="top"><div class="badge" aria-hidden="true">📜</div><h3>知財・出版</h3></div>
+      <div class="grid-2" style="margin-top:22px">
+        <div class="card reveal">
+          <div class="card-badge">📜</div>
+          <h3>知財・出版</h3>
           <p>ビジネス特許の取得経験。AI×社会シナリオ・働き方などをテーマに、Kindle等で約40冊出版。</p>
         </div>
-        <div class="feature reveal">
-          <div class="top"><div class="badge" aria-hidden="true">🧰</div><h3>副業: Harmonic Insight</h3></div>
+        <div class="card reveal">
+          <div class="card-badge">🧰</div>
+          <h3>Harmonic Insight（法人）</h3>
           <p>法人に出資・参画。120を超える開発プロジェクトを通じて、AI活用ビジネスアプリの企画・開発を推進。</p>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- CONTACT -->
-  <section id="contact" class="section contact">
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section contact-section">
     <div class="wrap">
-      <div class="kicker reveal">Contact</div>
-      <h2 class="h2 reveal">ご相談・お問い合わせ</h2>
-      <p class="lead reveal" style="margin-left:auto;margin-right:auto;">
-        コンサルティング、爆速アプリ開発、プロダクトに関するご質問など、<br>お気軽にご連絡ください。
+      <p class="kicker reveal">Contact</p>
+      <h2 class="section-title reveal">ご相談・お問い合わせ</h2>
+      <p class="section-lead reveal" style="margin-left:auto;margin-right:auto;">
+        コンサルティング、爆速アプリ開発、その他のご質問など、<br>お気軽にご連絡ください。
       </p>
 
-      <a class="mail reveal" href="mailto:erik.arthur.com@gmail.com?subject=お問い合わせ（瀬田博之サイト）">
+      <a class="contact-mail reveal" href="mailto:erik.arthur.com@gmail.com?subject=お問い合わせ（Erik Arthurサイト）">
         <span aria-hidden="true">✉</span>
-        <span>erik.arthur.com@gmail.com</span>
-        <small>Click to mail</small>
+        erik.arthur.com@gmail.com
       </a>
 
-      <div style="height:10px"></div>
-      <div class="lead reveal" style="font-size:13px; max-width:72ch; margin-left:auto;margin-right:auto;">
-        返信目安：1〜2営業日。
-      </div>
+      <p class="section-lead reveal" style="font-size:13px;margin-top:12px;margin-left:auto;margin-right:auto;">
+        返信目安：1〜2営業日
+      </p>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="frow">
-      <div>© <span id="y"></span> Hiroyuki Seta / Erik Arthur. All rights reserved.</div>
-      <div class="flinks">
-        <a href="https://h-insight.jp" target="_blank" rel="noopener" style="color:var(--accent);">Harmonic Insight →</a>
-        <a href="https://www.insight-office.com/ja" target="_blank" rel="noopener" style="color:var(--accent2);">Insight Office →</a>
-        <a href="https://www.insight-novels.com/" target="_blank" rel="noopener" style="color:var(--gold);">Insight Novels →</a>
-        <span class="legal">Built for speed & trust.</span>
-      </div>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>&copy; <span id="y"></span> Erik Arthur（瀬田 博之）. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="https://h-insight.jp" target="_blank" rel="noopener">Harmonic Insight →</a>
+      <a href="https://www.insight-office.com/ja" target="_blank" rel="noopener">Insight Office →</a>
+      <a href="https://www.insight-novels.com/" target="_blank" rel="noopener">Insight Novels →</a>
     </div>
   </div>
 </footer>
 
 <script>
-  // Year
   document.getElementById('y').textContent = new Date().getFullYear();
 
-  // Theme toggle with persistence
-  const key = 'hs-theme';
+  // Theme
+  const key = 'ea-theme';
   const root = document.documentElement;
   const saved = localStorage.getItem(key);
-  if(saved){ root.setAttribute('data-theme', saved); }
+  if (saved) root.setAttribute('data-theme', saved);
 
   document.getElementById('themeBtn').addEventListener('click', () => {
-    const cur = root.getAttribute('data-theme') || 'dark';
-    const next = (cur === 'light') ? 'dark' : 'light';
+    const next = (root.getAttribute('data-theme') || 'dark') === 'light' ? 'dark' : 'light';
     root.setAttribute('data-theme', next);
     localStorage.setItem(key, next);
   });
 
   // Mobile drawer
   const drawer = document.getElementById('drawer');
-  const openBtn = document.getElementById('menuBtn');
-  const closeBtn = document.getElementById('closeDrawer');
-
-  function openDrawer(){
-    drawer.classList.add('in');
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    drawer.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');
-  }
-  function closeDrawer(){
-    drawer.classList.remove('in');
+  });
+  function closeDrawer() {
+    drawer.classList.remove('open');
     drawer.setAttribute('aria-hidden', 'true');
   }
-  if(openBtn){
-    openBtn.addEventListener('click', openDrawer);
-    drawer.addEventListener('click', (e) => { if(e.target === drawer) closeDrawer(); });
-    closeBtn.addEventListener('click', (e) => { e.preventDefault(); closeDrawer(); });
-    drawer.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', closeDrawer));
-  }
+  drawer.addEventListener('click', (e) => { if (e.target === drawer) closeDrawer(); });
+  document.getElementById('closeDrawer').addEventListener('click', (e) => { e.preventDefault(); closeDrawer(); });
+  drawer.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', closeDrawer));
 
-  // Reveal on scroll
+  // Scroll reveal
   const obs = new IntersectionObserver((entries) => {
-    entries.forEach(en => { if(en.isIntersecting) en.target.classList.add('in'); });
-  }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+    entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('in'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
   // Scroll-spy: highlight active nav link
