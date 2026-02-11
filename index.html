@@ -1,1126 +1,1102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Erik Arthur | Harmonic Insight — 構造化の力で、爆速のビジネス変革を</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #111118;
-  --bg-card: #16161f;
-  --bg-card-hover: #1c1c28;
-  --text-primary: #f0eff4;
-  --text-secondary: #9b99a9;
-  --text-muted: #6b6980;
-  --accent: #c8a2ff;
-  --accent-bright: #e0c4ff;
-  --accent-dim: #7c5cad;
-  --accent-glow: rgba(200, 162, 255, 0.15);
-  --gold: #f0c864;
-  --gold-dim: #a68a3c;
-  --cyan: #64d8e8;
-  --cyan-dim: #3a8a94;
-  --green: #7ae8a0;
-  --red-soft: #e88a7a;
-  --border: rgba(255,255,255,0.06);
-  --border-accent: rgba(200,162,255,0.2);
-  --font-display: 'Outfit', sans-serif;
-  --font-body: 'Noto Sans JP', 'Outfit', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>瀬田 博之 | ビジネスアプリケーションクリエイター（建設×会計×AI）</title>
+  <meta name="description" content="社名・案件名・金額などは守秘義務と就業規定に配慮して非開示。建設の現場感と会計の数字、そしてAI/自動化の実装力をつなぎ、構想を動くアプリと運用に落とし込みます。"/>
+  <meta name="theme-color" content="#0b0f14" />
+  <meta property="og:title" content="瀬田 博之 | ビジネスアプリケーションクリエイター（建設×会計×AI）" />
+  <meta property="og:description" content="構想→検証→運用まで。建設×会計×AIをつなぎ、意思決定できる形に落とし込みます（社名・案件名等は非開示）。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ja_JP" />
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-/* --- NOISE OVERLAY --- */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
-}
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --surface: rgba(255,255,255,0.04);
+      --surface-2: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.68);
+      --dim: rgba(255,255,255,0.48);
 
-/* --- SCROLLBAR --- */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-primary); }
-::-webkit-scrollbar-thumb { background: var(--accent-dim); border-radius: 3px; }
+      /* premium accents */
+      --accent: #b9a2ff;
+      --accent2: #6ae4ff;
+      --gold: #f4d17a;
+      --good: #7ef0b0;
 
-/* --- NAVIGATION --- */
-nav {
-  position: fixed;
-  top: 0; left: 0; width: 100%;
-  padding: 1.25rem 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  background: rgba(10,10,15,0.8);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: all 0.3s;
-}
-.nav-logo {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
-  color: var(--text-primary);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-.nav-logo .logo-mark {
-  width: 32px; height: 32px;
-  background: linear-gradient(135deg, var(--accent), var(--cyan));
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 900;
-  color: var(--bg-primary);
-}
-.nav-links { display: flex; gap: 2rem; align-items: center; }
-.nav-links a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  transition: color 0.3s;
-  font-family: var(--font-display);
-}
-.nav-links a:hover { color: var(--accent-bright); }
-.nav-cta {
-  background: var(--accent) !important;
-  color: var(--bg-primary) !important;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
-  font-weight: 600 !important;
-  transition: all 0.3s !important;
-}
-.nav-cta:hover { background: var(--accent-bright) !important; transform: translateY(-1px); }
+      --shadow: 0 18px 60px rgba(0,0,0,0.45);
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
 
-/* --- HERO --- */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 8rem 3rem 4rem;
-  position: relative;
-  overflow: hidden;
-}
-.hero-glow {
-  position: absolute;
-  width: 600px; height: 600px;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.12;
-  pointer-events: none;
-}
-.hero-glow-1 { top: -100px; right: -100px; background: var(--accent); }
-.hero-glow-2 { bottom: -200px; left: -200px; background: var(--cyan); opacity: 0.08; }
-.hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-.hero-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--accent);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 0.2s;
-}
-.hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 6vw, 5.5rem);
-  font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 0.4s;
-}
-.hero-title .line { display: block; }
-.hero-title .highlight {
-  background: linear-gradient(135deg, var(--accent-bright), var(--cyan));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero-subtitle {
-  font-size: 1.15rem;
-  color: var(--text-secondary);
-  max-width: 620px;
-  margin-bottom: 2.5rem;
-  font-weight: 300;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 0.6s;
-}
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 4rem;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 0.8s;
-}
-.btn-primary {
-  background: var(--accent);
-  color: var(--bg-primary);
-  padding: 0.85rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.btn-primary:hover { background: var(--accent-bright); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,162,255,0.3); }
-.btn-secondary {
-  background: transparent;
-  color: var(--text-primary);
-  padding: 0.85rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  border: 1px solid var(--border-accent);
-  transition: all 0.3s;
-}
-.btn-secondary:hover { border-color: var(--accent); background: var(--accent-glow); }
+      --font-display: "Outfit", "Noto Sans JP", system-ui, sans-serif;
+      --font-body: "Noto Sans JP", system-ui, sans-serif;
+      --font-serif: "Noto Serif JP", serif;
+      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-/* --- IMPACT STATS --- */
-.impact-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 1s;
-}
-.stat-item {
-  background: var(--bg-secondary);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  position: relative;
-  transition: background 0.3s;
-}
-.stat-item:hover { background: var(--bg-card); }
-.stat-number {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.25rem;
-}
-.stat-number.purple { color: var(--accent-bright); }
-.stat-number.gold { color: var(--gold); }
-.stat-number.cyan { color: var(--cyan); }
-.stat-number.green { color: var(--green); }
-.stat-label {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-  font-weight: 500;
-}
-.stat-sub {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--accent-dim);
-  margin-top: 0.4rem;
-  letter-spacing: 0.02em;
-}
+      --max: 1160px;
+      --pad: clamp(18px, 3.2vw, 44px);
+    }
 
-/* --- SECTION COMMON --- */
-section {
-  padding: 6rem 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--accent);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-  line-height: 1.15;
-}
-.section-desc {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-  max-width: 600px;
-  font-weight: 300;
-  margin-bottom: 3rem;
-}
+    /* light mode (optional) */
+    html[data-theme="light"]{
+      --bg: #f7f6f3;
+      --surface: rgba(15,18,22,0.04);
+      --surface-2: rgba(15,18,22,0.06);
+      --border: rgba(15,18,22,0.10);
+      --text: rgba(15,18,22,0.92);
+      --muted: rgba(15,18,22,0.68);
+      --dim: rgba(15,18,22,0.52);
+      --shadow: 0 18px 60px rgba(12,14,16,0.12);
+    }
 
-/* --- SPEED PROOF / STORY --- */
-.speed-section {
-  position: relative;
-}
-.speed-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-.speed-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 2.5rem;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s;
-}
-.speed-card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-}
-.speed-card .card-icon {
-  width: 48px; height: 48px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  margin-bottom: 1.5rem;
-}
-.speed-card .card-icon.purple { background: rgba(200,162,255,0.12); }
-.speed-card .card-icon.gold { background: rgba(240,200,100,0.12); }
-.speed-card .card-icon.cyan { background: rgba(100,216,232,0.12); }
-.speed-card .card-icon.green { background: rgba(122,232,160,0.12); }
-.speed-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-.speed-card .speed-metric {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 900;
-  margin-bottom: 0.75rem;
-}
-.speed-card .speed-metric.purple { color: var(--accent-bright); }
-.speed-card .speed-metric.gold { color: var(--gold); }
-.speed-card .speed-metric.cyan { color: var(--cyan); }
-.speed-card .speed-metric.green { color: var(--green); }
-.speed-card p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-.speed-card .comparison {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-.speed-card .comparison span {
-  color: var(--accent);
-}
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x:hidden;
+    }
 
-/* --- FULL-WIDTH DIVIDER QUOTE --- */
-.quote-band {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  padding: 4rem 3rem;
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  text-align: center;
-  position: relative;
-}
-.quote-band blockquote {
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: var(--font-display);
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  font-weight: 600;
-  line-height: 1.5;
-  color: var(--text-primary);
-  letter-spacing: -0.01em;
-}
-.quote-band blockquote .q-highlight {
-  color: var(--accent-bright);
-}
-.quote-band .q-attr {
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-}
+    /* subtle grid + glow */
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      background:
+        radial-gradient(1200px 800px at 10% 10%, rgba(185,162,255,0.13), transparent 55%),
+        radial-gradient(900px 700px at 85% 25%, rgba(106,228,255,0.11), transparent 55%),
+        radial-gradient(1000px 700px at 55% 95%, rgba(244,209,122,0.08), transparent 60%),
+        linear-gradient(to bottom, rgba(255,255,255,0.05), transparent 28%),
+        linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: auto, auto, auto, auto, 92px 92px, 92px 92px;
+      background-position: 0 0, 0 0, 0 0, 0 0, -1px -1px, -1px -1px;
+      pointer-events:none;
+      opacity: 0.85;
+      z-index:-2;
+    }
+    body::after{
+      content:"";
+      position:fixed; inset:0;
+      pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      z-index:-1;
+    }
 
-/* --- PRODUCTS --- */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-}
-.product-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 2rem;
-  transition: all 0.4s;
-  position: relative;
-  overflow: hidden;
-}
-.product-card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-3px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.25);
-}
-.product-card .prod-tag {
-  display: inline-flex;
-  gap: 0.4rem;
-  margin-bottom: 1rem;
-}
-.product-card .prod-tag span {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  background: rgba(200,162,255,0.1);
-  color: var(--accent);
-  letter-spacing: 0.04em;
-}
-.product-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-.product-card p {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  line-height: 1.6;
-}
+    a{ color:inherit; text-decoration:none; }
+    .skip{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip:focus{
+      left: 16px; top: 16px; width:auto; height:auto;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      border-radius: 10px;
+      z-index: 9999;
+    }
 
-/* --- SERVICE SECTION --- */
-.service-highlight {
-  background: linear-gradient(135deg, rgba(200,162,255,0.06), rgba(100,216,232,0.04));
-  border: 1px solid var(--border-accent);
-  border-radius: 20px;
-  padding: 3.5rem;
-  margin-bottom: 3rem;
-  position: relative;
-  overflow: hidden;
-}
-.service-highlight::before {
-  content: '';
-  position: absolute;
-  top: -50%; right: -20%;
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
-  pointer-events: none;
-}
-.service-highlight h3 {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 0.75rem;
-  position: relative;
-}
-.service-highlight .price {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: var(--accent-bright);
-  margin-bottom: 1rem;
-  position: relative;
-}
-.service-highlight .price-note {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--text-secondary);
-}
-.service-highlight p {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  max-width: 600px;
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-.service-flow {
-  display: flex;
-  gap: 0;
-  position: relative;
-  margin-top: 2rem;
-}
-.flow-step {
-  flex: 1;
-  text-align: center;
-  position: relative;
-  padding: 1.5rem 1rem;
-}
-.flow-step::after {
-  content: '→';
-  position: absolute;
-  right: -0.6rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--accent-dim);
-  font-size: 1.2rem;
-}
-.flow-step:last-child::after { display: none; }
-.flow-step .step-time {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.1em;
-}
-.flow-step .step-label {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-.flow-step .step-desc {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-top: 0.3rem;
-}
+    /* layout */
+    .wrap{ max-width: var(--max); margin:0 auto; padding: 0 var(--pad); }
+    .section{ padding: clamp(56px, 8vw, 96px) 0; }
+    .kicker{
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.95;
+    }
+    .h2{
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.18;
+      font-size: clamp(22px, 3.2vw, 38px);
+      margin: 14px 0 10px;
+    }
+    .lead{
+      color: var(--muted);
+      font-weight: 400;
+      font-size: clamp(15px, 1.4vw, 17px);
+      max-width: 70ch;
+      margin: 0 0 24px;
+    }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-}
-.service-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 2rem;
-  transition: all 0.3s;
-}
-.service-card:hover {
-  border-color: var(--border-accent);
-  background: var(--bg-card-hover);
-}
-.service-card h4 {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-.service-card p {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  line-height: 1.6;
-}
+    /* nav */
+    .nav{
+      position: sticky;
+      top:0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: color-mix(in oklab, var(--bg) 76%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-in{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 12px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+    .mark{
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display:grid; place-items:center;
+      color: color-mix(in oklab, var(--bg) 86%, black);
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 10px 30px rgba(185,162,255,0.20);
+    }
+    .brand small{
+      display:block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--dim);
+      letter-spacing: .10em;
+      margin-top: -2px;
+    }
+    .navlinks{
+      display:flex; align-items:center; gap: 18px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: .03em;
+      color: var(--muted);
+    }
+    .navlinks a{ padding: 8px 10px; border-radius: 10px; }
+    .navlinks a:hover{ background: var(--surface); color: var(--text); }
 
-/* --- TECH STACK --- */
-.tech-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 2rem;
-}
-.tech-pill {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  padding: 0.45rem 1rem;
-  border-radius: 100px;
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  background: var(--bg-card);
-  transition: all 0.3s;
-}
-.tech-pill:hover { border-color: var(--accent-dim); color: var(--accent-bright); }
+    .cta{
+      display:flex; gap: 10px; align-items:center;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .02em;
+      white-space: nowrap;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      cursor:pointer;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
+    .btn.primary{
+      border-color: color-mix(in oklab, var(--accent) 42%, var(--border));
+      background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 88%, white), color-mix(in oklab, var(--accent2) 88%, white));
+      color: color-mix(in oklab, var(--bg) 92%, black);
+      box-shadow: 0 18px 50px rgba(106,228,255,0.16);
+    }
+    .btn.primary:hover{ transform: translateY(-2px); }
+    .icon{
+      width: 18px; height: 18px; display:inline-block;
+    }
 
-/* --- PORTFOLIO NUMBERS --- */
-.portfolio-bar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1px;
-  background: var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-  margin-bottom: 2rem;
-}
-.portfolio-item {
-  background: var(--bg-card);
-  padding: 1.5rem;
-  text-align: center;
-}
-.portfolio-item .p-num {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--accent-bright);
-}
-.portfolio-item .p-label {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-top: 0.3rem;
-}
+    .menu{
+      display:none;
+    }
 
-/* --- PROFILE --- */
-.profile-section {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  align-items: start;
-}
-.profile-left {
-  position: sticky;
-  top: 6rem;
-}
-.profile-avatar {
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: 20px;
-  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
-  border: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-.profile-avatar .avatar-initials {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--accent-bright), var(--cyan));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.profile-avatar .avatar-title {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
-}
-.profile-info h3 {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-}
-.profile-info .profile-sub {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-}
-.profile-info p {
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-  margin-bottom: 1rem;
-  line-height: 1.8;
-}
-.career-list {
-  list-style: none;
-  margin-top: 2rem;
-}
-.career-list li {
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.88rem;
-}
-.career-list li .c-company { font-weight: 600; }
-.career-list li .c-role { color: var(--text-muted); font-size: 0.8rem; }
-.certs-row {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
-.cert-badge {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  padding: 0.4rem 0.8rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--text-secondary);
-}
+    /* hero */
+    .hero{
+      padding: clamp(44px, 6vw, 74px) 0 22px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: clamp(18px, 3vw, 34px);
+      align-items: start;
+    }
+    .title{
+      font-family: var(--font-display);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      font-size: clamp(34px, 5.1vw, 64px);
+      margin: 14px 0 10px;
+    }
+    .title .grad{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; background-clip:text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+    }
+    .sub{
+      color: var(--muted);
+      font-size: clamp(15px, 1.4vw, 18px);
+      max-width: 72ch;
+      margin: 0 0 22px;
+    }
+    .hero-actions{
+      display:flex; flex-wrap:wrap; gap: 12px;
+      margin: 10px 0 18px;
+    }
 
-/* --- CONTACT --- */
-.contact-section {
-  text-align: center;
-  padding: 8rem 3rem;
-}
-.contact-section .section-title {
-  margin-left: auto;
-  margin-right: auto;
-}
-.contact-section .section-desc {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2.5rem;
-}
-.contact-email {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  font-weight: 700;
-  color: var(--accent-bright);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s;
-  padding-bottom: 4px;
-}
-.contact-email:hover { border-bottom-color: var(--accent-bright); }
+    .proofbar{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .proof{
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 14px;
+      box-shadow: none;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .proof:hover{
+      transform: translateY(-2px);
+      border-color: color-mix(in oklab, var(--accent) 32%, var(--border));
+      background: var(--surface-2);
+    }
+    .pnum{
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+      margin: 0 0 2px;
+    }
+    .plabel{
+      color: var(--dim);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+    .psub{
+      margin-top: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: color-mix(in oklab, var(--accent) 72%, var(--dim));
+      letter-spacing: .06em;
+    }
 
-/* --- FOOTER --- */
-footer {
-  padding: 2rem 3rem;
-  text-align: center;
-  border-top: 1px solid var(--border);
-  font-size: 0.78rem;
-  color: var(--text-muted);
-}
+    .card{
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--surface) 86%, transparent);
+      border-radius: var(--radius-xl);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-80px -80px auto auto;
+      width: 220px; height:220px;
+      background: radial-gradient(circle, rgba(185,162,255,0.25), transparent 70%);
+      filter: blur(8px);
+      pointer-events:none;
+      transform: rotate(20deg);
+    }
 
-/* --- ANIMATIONS --- */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .profile{
+      display:flex; flex-direction:column; gap: 12px;
+    }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
-  .nav-links { display: none; }
-  .hero { padding: 7rem 1.5rem 3rem; }
-  section { padding: 4rem 1.5rem; }
-  .impact-stats { grid-template-columns: repeat(2, 1fr); }
-  .speed-grid { grid-template-columns: 1fr; }
-  .products-grid { grid-template-columns: 1fr; }
-  .services-grid { grid-template-columns: 1fr; }
-  .profile-section { grid-template-columns: 1fr; }
-  .profile-left { position: static; }
-  .service-flow { flex-direction: column; gap: 0.5rem; }
-  .flow-step::after { display: none; }
-  .contact-section { padding: 5rem 1.5rem; }
-}
+    .mini{
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 14px 12px;
+      background: var(--surface);
+    }
+    .mini h3{
+      font-family: var(--font-display);
+      margin:0;
+      font-size: 13px;
+      letter-spacing: .02em;
+    }
+    .mini p{
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .pillrow{
+      display:flex; flex-wrap:wrap; gap: 8px;
+      margin-top: 10px;
+    }
+    .pill{
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--surface) 92%, transparent);
+      color: var(--muted);
+    }
 
-/* --- MOBILE NAV --- */
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-@media (max-width: 900px) {
-  .mobile-menu-btn { display: block; }
-}
-</style>
+    /* quote band */
+    .band{
+      margin: 26px 0 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in oklab, var(--surface) 70%, transparent);
+      padding: 24px 0;
+    }
+    .quote{
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: clamp(16px, 2vw, 22px);
+      letter-spacing: -0.01em;
+      line-height: 1.55;
+      margin: 0;
+      color: var(--text);
+    }
+    .quote .hi{ color: var(--gold); }
+    .qsub{
+      margin-top: 8px;
+      color: var(--dim);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: .10em;
+    }
+
+    /* grids */
+    .grid-3{ display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .grid-2{ display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+
+    .feature{
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .feature:hover{
+      transform: translateY(-2px);
+      border-color: color-mix(in oklab, var(--accent2) 28%, var(--border));
+      background: var(--surface-2);
+    }
+    .feature .top{
+      display:flex; gap: 10px; align-items:center;
+      margin-bottom: 10px;
+    }
+    .badge{
+      width: 36px; height: 36px;
+      border-radius: 12px;
+      display:grid; place-items:center;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      font-size: 16px;
+    }
+    .feature h3{
+      margin:0;
+      font-family: var(--font-display);
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .feature p{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.75;
+    }
+
+    /* timeline */
+    .timeline{
+      display:flex; flex-direction:column; gap: 12px;
+    }
+    .titem{
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 16px 16px 14px;
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+    }
+    .twhen{
+      min-width: 142px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--dim);
+      letter-spacing: .06em;
+    }
+    .tmain h4{
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 14.5px;
+      letter-spacing: .01em;
+    }
+    .tmain p{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .tmain .tags{
+      margin-top: 9px;
+      display:flex; flex-wrap:wrap; gap: 8px;
+    }
+
+    /* services */
+    .offer{
+      border: 1px solid color-mix(in oklab, var(--accent) 30%, var(--border));
+      background: linear-gradient(135deg, color-mix(in oklab, var(--surface) 86%, transparent), rgba(185,162,255,0.10));
+      border-radius: 22px;
+      padding: 22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .offer::before{
+      content:"";
+      position:absolute; inset:-120px -120px auto auto;
+      width: 300px; height:300px;
+      background: radial-gradient(circle, rgba(106,228,255,0.22), transparent 70%);
+      filter: blur(10px);
+      pointer-events:none;
+    }
+    .offer h3{
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+    .price{
+      margin: 10px 0 10px;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(20px, 2.6vw, 28px);
+      letter-spacing: -0.02em;
+      color: var(--accent2);
+    }
+    .note{
+      color: var(--muted);
+      font-size: 13.5px;
+      margin: 0 0 14px;
+      max-width: 70ch;
+    }
+    .flow{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .step{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      border-radius: 16px;
+      padding: 14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .step .d{
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--dim);
+    }
+    .step .l{
+      margin-top: 6px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 13.5px;
+    }
+    .step .s{
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+
+    /* contact */
+    .contact{
+      text-align:center;
+      padding-bottom: 82px;
+    }
+    .mail{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid color-mix(in oklab, var(--accent) 26%, var(--border));
+      background: var(--surface);
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: .02em;
+      color: var(--text);
+      cursor: pointer;
+      user-select:none;
+    }
+    .mail small{
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--dim);
+      letter-spacing: .10em;
+    }
+
+    footer{
+      border-top: 1px solid var(--border);
+      padding: 22px 0 26px;
+      color: var(--dim);
+      font-size: 12px;
+    }
+    footer .frow{
+      display:flex; justify-content:space-between; align-items:flex-start;
+      gap: 14px; flex-wrap:wrap;
+    }
+    .legal{
+      font-family: var(--font-mono);
+      letter-spacing: .08em;
+    }
+
+    /* reveal */
+    .reveal{ opacity:0; transform: translateY(18px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal.in{ opacity:1; transform: translateY(0); }
+
+    /* responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .proofbar{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .flow{ grid-template-columns: 1fr; }
+      .navlinks{ display:none; }
+      .menu{ display:inline-flex; }
+      .drawer{
+        position: fixed;
+        inset: 0;
+        display:none;
+        background: rgba(0,0,0,0.55);
+        z-index: 60;
+      }
+      html[data-theme="light"] .drawer{ background: rgba(15,18,22,0.35); }
+      .drawer.in{ display:block; }
+      .panel{
+        position:absolute; right: 12px; top: 64px;
+        width: min(360px, calc(100vw - 24px));
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        box-shadow: var(--shadow);
+        padding: 12px;
+        overflow:hidden;
+      }
+      .panel a{
+        display:block;
+        padding: 12px 12px;
+        border-radius: 12px;
+        font-family: var(--font-display);
+        font-weight: 700;
+        color: var(--muted);
+      }
+      .panel a:hover{ background: var(--surface); color: var(--text); }
+      .panel .sep{ height:1px; background: var(--border); margin: 6px 0; }
+    }
+
+    @media (max-width: 520px){
+      .cta{ flex-wrap: wrap; justify-content: flex-end; }
+    }
+
+  </style>
 </head>
+
 <body>
+<a class="skip" href="#main">本文へスキップ</a>
 
-<!-- NAVIGATION -->
-<nav>
-  <a href="#" class="nav-logo">
-    <span class="logo-mark">HI</span>
-    Harmonic Insight
-  </a>
-  <div class="nav-links">
-    <a href="#speed">実績</a>
-    <a href="#products">プロダクト</a>
-    <a href="#services">サービス</a>
-    <a href="#about">プロフィール</a>
-    <a href="#contact" class="nav-cta">お問い合わせ</a>
-  </div>
-  <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">☰</button>
-</nav>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#">
+      <span class="mark">SA</span>
+      <span>
+        瀬田 博之 <small>ビジネスアプリケーション<br>クリエイター</small>
+      </span>
+    </a>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-glow hero-glow-1"></div>
-  <div class="hero-glow hero-glow-2"></div>
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Business Application Creator — Erik Arthur</div>
-    <h1 class="hero-title">
-      <span class="line">構造化の力で、</span>
-      <span class="line"><span class="highlight">爆速のビジネス変革を。</span></span>
-    </h1>
-    <p class="hero-subtitle">
-      28年のIT・業務改革経験と構造化思考が生む圧倒的なスピード。<br>
-      STRAVIS 700社基盤の構築、建設DX事業を3年で5.6倍に成長。<br>
-      120以上のプロジェクトと約40冊の著書が証明する、異次元の生産性。
-    </p>
-    <div class="hero-actions">
-      <a href="#services" class="btn-primary">爆速開発サービス →</a>
-      <a href="#products" class="btn-secondary">プロダクト一覧</a>
+    <nav class="navlinks" aria-label="Primary">
+      <a href="#strength">強み</a>
+      <a href="#roots">原点</a>
+      <a href="#work">実績</a>
+      <a href="#services">サービス</a>
+      <a href="#career">経歴</a>
+      <a href="#contact">連絡</a>
+    </nav>
+
+    <div class="cta">
+      <button class="btn" id="themeBtn" type="button" aria-label="テーマ切替">
+        <span class="icon" aria-hidden="true">◐</span>
+        Theme
+      </button>
+      <a class="btn primary" href="#contact">
+        <span class="icon" aria-hidden="true">✦</span>
+        相談する
+      </a>
+      <button class="btn menu" id="menuBtn" type="button" aria-label="メニュー">
+        <span class="icon" aria-hidden="true">☰</span>
+        Menu
+      </button>
     </div>
-    <div class="impact-stats">
-      <div class="stat-item">
-        <div class="stat-number purple">120+</div>
-        <div class="stat-label">開発プロジェクト</div>
-        <div class="stat-sub">GitHub Repositories</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number gold">~40冊</div>
-        <div class="stat-label">著書（1〜2ヶ月で執筆）</div>
-        <div class="stat-sub">Kindle Published</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number cyan">5.6倍</div>
-        <div class="stat-label">FPT建設DX売上成長</div>
-        <div class="stat-sub">8千万 → 4.5億 / 3年</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number green">28年</div>
-        <div class="stat-label">IT・業務改革の経験</div>
-        <div class="stat-sub">Since 1997</div>
-      </div>
+  </div>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="panel" role="dialog" aria-label="Mobile Menu">
+      <a href="#strength">強み</a>
+      <a href="#roots">原点</a>
+      <a href="#work">実績</a>
+      <a href="#services">サービス</a>
+      <a href="#career">経歴</a>
+      <a href="#contact">連絡</a>
+      <div class="sep"></div>
+      <a href="#" id="closeDrawer">閉じる</a>
     </div>
   </div>
 </header>
 
-<!-- QUOTE -->
-<div class="quote-band">
-  <blockquote>
-    「速くできる＝安くていい」ではない。<br>
-    <span class="q-highlight">速くできること自体がプレミアム。</span>
-  </blockquote>
-  <div class="q-attr">— 構造化された28年の知見が、開発速度を再定義する</div>
+<main id="main">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker reveal">ビジネスアプリケーションクリエイター / 建設×会計×AI</div>
+          <h1 class="title reveal">
+  現場の言葉で、<span class="grad">動くアプリ</span>をつくる。<br>
+  <span style="opacity:.92">“絵に描いたDX”を、実装と運用へ。</span>
+</h1>
+          <p class="sub reveal">
+  家業が工務店で、幼い頃から不動産・職人の世界に触れて育ちました。学生時代には家業を手伝い、<b>宅地建物取引士</b>も取得。
+  その後はIT領域で、会計/業務・海外案件・自動化/生成AIまで幅広く経験し、
+  <b>「現場」「数字」「技術」</b>の3つを同時に扱えるのが強みです。<br>
+  現職の就業規定と守秘義務に配慮し、社名・案件名・金額などは非開示ですが、
+  事業立ち上げ/拡大、製品開発、組織化までを一気通貫で伴走します。
+</p>
+
+          <div class="hero-actions reveal">
+            <a class="btn primary" href="#services"><span class="icon" aria-hidden="true">⚡</span>提供サービスを見る</a>
+            <a class="btn" href="#work"><span class="icon" aria-hidden="true">▦</span>実績を見る</a>
+            <a class="btn" href="#career"><span class="icon" aria-hidden="true">⟡</span>経歴サマリ</a>
+          </div>
+
+          <div class="proofbar reveal" aria-label="Key strengths">
+  <div class="proof">
+    <div class="pnum">0→1 / 1→10</div>
+    <div class="plabel">事業構築</div>
+    <div class="psub">構想・収益化・組織化</div>
+  </div>
+  <div class="proof">
+    <div class="pnum">会計×現場</div>
+    <div class="plabel">意思決定の設計</div>
+    <div class="psub">PL/指標/運用の整合</div>
+  </div>
+  <div class="proof">
+    <div class="pnum">作って検証</div>
+    <div class="plabel">ハンズオン</div>
+    <div class="psub">PoC・プロトタイプ</div>
+  </div>
+</div>
+</div>
+</div>
 </div>
 
-<!-- SPEED PROOF -->
-<section id="speed" class="speed-section">
-  <div class="section-label reveal">● Proof of Speed</div>
-  <h2 class="section-title reveal">なぜ、この速度が可能なのか</h2>
-  <p class="section-desc reveal">
-    構造化能力 — 情報を体系的に理解・整理し、再利用可能な形に変換する力。<br>
-    すべてのスピードの源泉は、ここにあります。
-  </p>
-  <div class="speed-grid">
-    <div class="speed-card reveal">
-      <div class="card-icon purple">📚</div>
-      <h3>著書 約40冊</h3>
-      <div class="speed-metric purple">1〜2ヶ月で執筆</div>
-      <p>28年間で構造化された知識を、本というフォーマットに変換。ゼロから書くのではなく、整理された構造を出力するだけ。</p>
-      <div class="comparison">通常の著者: <span>1冊あたり6ヶ月〜1年</span></div>
-    </div>
-    <div class="speed-card reveal">
-      <div class="card-icon gold">⚡</div>
-      <h3>GitHub 120+ プロジェクト</h3>
-      <div class="speed-metric gold">数ヶ月で構築</div>
-      <p>共通基盤が洗練されているから、新しいプロジェクトほど速くなる。作れば作るほど加速する好循環。</p>
-      <div class="comparison">一般的な開発者: <span>年間3〜5プロジェクト</span></div>
-    </div>
-    <div class="speed-card reveal">
-      <div class="card-icon cyan">📈</div>
-      <h3>FPT 建設DX事業</h3>
-      <div class="speed-metric cyan">売上5.6倍に拡大</div>
-      <p>ゼロから建設DX事業を創設し、3年で売上8千万円→4.5億円に成長。20名超の組織を構築し、3チーム体制へ再編。事業構築力の証明。</p>
-      <div class="comparison">0→1の立ち上げ + 1→10の拡大: <span>両方を経験</span></div>
-    </div>
-    <div class="speed-card reveal">
-      <div class="card-icon green">📱</div>
-      <h3>モバイルアプリ開発</h3>
-      <div class="speed-metric green">3日で5つのアプリ</div>
-      <p>時計、カメラ、QRコード等のAndroidアプリを数時間単位で開発。構造が頭にあるから迷わない。</p>
-      <div class="comparison">通常の開発: <span>1アプリあたり1〜3ヶ月</span></div>
-    </div>
-  </div>
-</section>
+        <aside class="card reveal">
+          <div class="profile">
+            <div class="mini">
+              <h3>相談が向いているテーマ</h3>
+              <p>建設DX / 会計・管理会計 / 業務改革 / 生成AI・自動化 / PoC→本番</p>
+              <div class="pillrow" aria-label="tags">
+                <span class="pill">0→1 立ち上げ</span>
+                <span class="pill">1→10 拡大</span>
+                <span class="pill">PL設計</span>
+                <span class="pill">ハンズオン実装</span>
+                <span class="pill">日英バイリンガル</span>
+              </div>
+            </div>
 
-<!-- PRODUCTS -->
-<section id="products">
-  <div class="section-label reveal">● Insight Series</div>
-  <h2 class="section-title reveal">プロダクト</h2>
-  <p class="section-desc reveal">
-    業務の深い理解とAI技術を融合した、Harmonic Insightの主力プロダクト群。
-  </p>
-  <div class="products-grid">
-    <div class="product-card reveal">
-      <div class="prod-tag"><span>C#</span><span>Python</span><span>Released</span></div>
-      <h3>InsightSlide</h3>
-      <p>PowerPointのテキスト抽出・解析ツール。スライド構造を保持したまま高精度抽出。翻訳準備やテキストマイニングに。</p>
-    </div>
-    <div class="product-card reveal">
-      <div class="prod-tag"><span>C#</span><span>Claude AI</span></div>
-      <h3>HarmonicDoc</h3>
-      <p>AI搭載Word文書アシスタント。Claude AIとの連携で、文書の作成・編集・要約を支援。</p>
-    </div>
-    <div class="product-card reveal">
-      <div class="prod-tag"><span>C#</span><span>WPF</span><span>Claude AI</span></div>
-      <h3>HarmonicSheet</h3>
-      <p>シニア向け統合オフィスアプリ。80歳以上でも直感的に操作可能な、文書・表計算・メール統合ツール。</p>
-    </div>
-    <div class="product-card reveal">
-      <div class="prod-tag"><span>TypeScript</span><span>Next.js</span></div>
-      <h3>InsightBI</h3>
-      <p>建設業向けBIダッシュボード。売上・粗利・プロジェクト状況をリアルタイムで可視化。</p>
-    </div>
-    <div class="product-card reveal">
-      <div class="prod-tag"><span>TypeScript</span><span>Live2D</span><span>AI</span></div>
-      <h3>Interview Insight</h3>
-      <p>Live2Dキャラクターが対話を通じて知識を抽出するAIインタビューツール。業務調査を自動化。</p>
-    </div>
-    <div class="product-card reveal">
-      <div class="prod-tag"><span>C#</span><span>Stable Diffusion</span></div>
-      <h3>InsightImageGen</h3>
-      <p>Stable DiffusionとVOICEVOXを活用したAI画像・音声生成ツール。テキストからの画像生成に対応。</p>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-label reveal">● Services</div>
-  <h2 class="section-title reveal">サービス</h2>
-  <p class="section-desc reveal">
-    28年の構造化能力が、あなたのビジネス課題を最速で解決します。
-  </p>
-
-  <!-- Flagship Service -->
-  <div class="service-highlight reveal">
-    <h3>⚡ 爆速アプリ開発</h3>
-    <div class="price">1週間 200万円〜 <span class="price-note">/ 通常開発の1/8の期間、1/5のコスト</span></div>
-    <p>
-      午前中に要件をヒアリング。午後には動くプロトタイプ。1週間で本番稼働可能なアプリケーションを納品。<br>
-      28年の業界知識があるから、要件の本質を即座に見抜き、正しいものを最速で作ります。
-    </p>
-    <div class="service-flow">
-      <div class="flow-step">
-        <div class="step-time">DAY 1</div>
-        <div class="step-label">ヒアリング</div>
-        <div class="step-desc">業務課題の構造化</div>
-      </div>
-      <div class="flow-step">
-        <div class="step-time">DAY 2-3</div>
-        <div class="step-label">プロトタイプ</div>
-        <div class="step-desc">動くものでフィードバック</div>
-      </div>
-      <div class="flow-step">
-        <div class="step-time">DAY 4-5</div>
-        <div class="step-label">開発・調整</div>
-        <div class="step-desc">フル機能実装</div>
-      </div>
-      <div class="flow-step">
-        <div class="step-time">DAY 6-7</div>
-        <div class="step-label">納品</div>
-        <div class="step-desc">本番稼働開始</div>
+            <div class="mini">
+              <h3>資格・認定（抜粋）</h3>
+              <p>PMP / 宅地建物取引士 / 日英ビジネス対応 / Google Data Analytics ほか</p>
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
-  </div>
 
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <h4>🏗️ 建設業DXコンサルティング</h4>
-      <p>スーパーゼネコンから中堅ゼネコンまで多数の実績。業務診断、KPI可視化、パイプライン管理、教育ツールまで、戦略から実行まで一貫支援。事業をゼロから4.5億円規模に成長させた経験。</p>
-    </div>
-    <div class="service-card reveal">
-      <h4>📊 データ分析・BI構築</h4>
-      <p>BIダッシュボード構築、KPI可視化、収益性分析、受注予測。データドリブンな意思決定を支援します。</p>
-    </div>
-    <div class="service-card reveal">
-      <h4>🤖 AI活用アプリ開発</h4>
-      <p>Claude API、Stable Diffusion、VOICEVOX等を活用したビジネスアプリの企画・開発。対話型AIから画像生成まで。</p>
-    </div>
-    <div class="service-card reveal">
-      <h4>⚙️ RPA・業務自動化</h4>
-      <p>既存業務の自動化ソリューション。Bizrobo/Forguncy解析、マイグレーション、CI自動修正まで対応。</p>
-    </div>
-  </div>
-</section>
-
-<!-- TECH STACK -->
-<section>
-  <div class="section-label reveal">● Technology Stack</div>
-  <h2 class="section-title reveal">技術スタック</h2>
-  <p class="section-desc reveal">フルスタック開発を支える幅広い技術基盤。</p>
-  <div class="tech-row reveal">
-    <span class="tech-pill">C# / .NET 8</span>
-    <span class="tech-pill">WPF</span>
-    <span class="tech-pill">TypeScript</span>
-    <span class="tech-pill">React / Next.js</span>
-    <span class="tech-pill">Python / Flask</span>
-    <span class="tech-pill">Kotlin (Android)</span>
-    <span class="tech-pill">Swift (iOS)</span>
-    <span class="tech-pill">Tailwind CSS</span>
-    <span class="tech-pill">Supabase</span>
-    <span class="tech-pill">Vercel</span>
-    <span class="tech-pill">Claude API</span>
-    <span class="tech-pill">Stable Diffusion</span>
-    <span class="tech-pill">VOICEVOX</span>
-    <span class="tech-pill">Live2D</span>
-    <span class="tech-pill">OpenCV</span>
-    <span class="tech-pill">Tesseract OCR</span>
-    <span class="tech-pill">Syncfusion</span>
-    <span class="tech-pill">Inno Setup</span>
-  </div>
-
-  <div class="portfolio-bar reveal">
-    <div class="portfolio-item">
-      <div class="p-num">7+</div>
-      <div class="p-label">建設業DX</div>
-    </div>
-    <div class="portfolio-item">
-      <div class="p-num">8+</div>
-      <div class="p-label">AI・クリエイティブ</div>
-    </div>
-    <div class="portfolio-item">
-      <div class="p-num">6+</div>
-      <div class="p-label">デスクトップ</div>
-    </div>
-    <div class="portfolio-item">
-      <div class="p-num">7+</div>
-      <div class="p-label">RPA・自動化</div>
-    </div>
-    <div class="portfolio-item">
-      <div class="p-num">12+</div>
-      <div class="p-label">モバイルアプリ</div>
-    </div>
-    <div class="portfolio-item">
-      <div class="p-num">8+</div>
-      <div class="p-label">Web・ビジネス</div>
-    </div>
-    <div class="portfolio-item">
-      <div class="p-num">5+</div>
-      <div class="p-label">共通基盤</div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-label reveal">● About</div>
-  <h2 class="section-title reveal">プロフィール</h2>
-  <div class="profile-section reveal">
-    <div class="profile-left">
-      <div class="profile-avatar">
-        <div class="avatar-initials">EA</div>
-        <div class="avatar-title">BUSINESS APPLICATION CREATOR</div>
-      </div>
-      <div class="certs-row">
-        <span class="cert-badge">PMP</span>
-        <span class="cert-badge">TOEIC 855</span>
-        <span class="cert-badge">英検準1級</span>
-        <span class="cert-badge">宅地建物取引士</span>
-        <span class="cert-badge">Google Data Analytics</span>
-        <span class="cert-badge">ビジネス特許保有</span>
+    <div class="band">
+      <div class="wrap">
+        <p class="quote reveal">
+          「DXは“資料”では進まない。<span class="hi">動く仕組み</span>を早く作り、現場で磨く。」
+        </p>
+        <div class="qsub reveal">— 戦略・会計・現場・AIを一気通貫で扱えるから、前進が速い。</div>
       </div>
     </div>
-    <div class="profile-info">
-      <h3>Erik Arthur <span style="font-weight:400; font-size:0.9em; color:var(--text-muted);">瀬田 博之</span></h3>
-      <div class="profile-sub">ビジネスアプリケーションクリエーター / Harmonic Insight 出資者</div>
-      <p>
-        28年以上にわたるIT業界・業務改革の経験を持つハンズオン型事業リーダー。
-        電通総研で連結会計パッケージSTRAVIS（700社基盤）のプロダクトリーダー、
-        タイ・中国・香港でのグローバル事業、UiPath事業立ち上げ（Partner of the Year 2018受賞）を経験。
+  </section>
+
+  <!-- STRENGTH -->
+  <section id="strength" class="section">
+    <div class="wrap">
+      <div class="kicker reveal">What you get</div>
+      <h2 class="h2 reveal">“会計×現場×AI”を、1つの設計図にまとめる</h2>
+      <p class="lead reveal">
+        バラバラに進む「戦略」「業務」「IT」「会計」「AI」を、同じKPIと同じ構造で整合させます。
+        そのうえで、PoCで終わらせず、運用まで落とし込むための“実装と教育”まで担います。
       </p>
-      <p>
-        現職FPT Consulting Japanでは建設DX事業をゼロから立ち上げ、
-        3年で売上8千万円→4.5億円（約5.6倍）に拡大。20名超の組織を構築。
-        「IT × 会計 × 現場業務」のバランス感覚と、自ら手を動かす実装力を武器に、
-        構想策定から実装・運営までを一貫して推進。
-      </p>
-      <p>
-        副業としてHarmonic Insightに出資・参画し、120を超える開発プロジェクトと
-        約40冊のKindle書籍を通じて、AI活用ビジネスアプリケーションの企画・開発と技術知見の発信を行う。
-        ビジネス特許（特開2020-107153）も保有。
-      </p>
-      <ul class="career-list">
-        <li>
-          <span class="c-company">FPT Consulting Japan</span>
-          <span class="c-role">ディレクター / 建設DX事業立ち上げ・拡大</span>
-        </li>
-        <li>
-          <span class="c-company">PwC Consulting</span>
-          <span class="c-role">シニアマネージャー / 建設DXコンサルティング</span>
-        </li>
-        <li>
-          <span class="c-company">Infosys Limited</span>
-          <span class="c-role">プリンシパルコンサルタント / 日系顧客拡大</span>
-        </li>
-        <li>
-          <span class="c-company">電通総研（旧ISID）</span>
-          <span class="c-role">21年 / STRAVIS・UiPath・海外事業</span>
-        </li>
-      </ul>
+
+      <div class="grid-3">
+        <div class="feature reveal">
+          <div class="top">
+            <div class="badge" aria-hidden="true">🏗️</div>
+            <h3>建設DXの現場感</h3>
+          </div>
+          <p>スーパーゼネコン〜中堅ゼネコンまで多数の支援。現場の制約を前提に、実行可能なロードマップへ落とします。</p>
+        </div>
+
+        <div class="feature reveal">
+          <div class="top">
+            <div class="badge" aria-hidden="true">📊</div>
+            <h3>数字で回る設計</h3>
+          </div>
+          <p>連結会計・管理会計に精通。PL設計、粗利可視化、パイプライン運営など、経営が意思決定できる形に整備します。</p>
+        </div>
+
+        <div class="feature reveal">
+          <div class="top">
+            <div class="badge" aria-hidden="true">🤖</div>
+            <h3>作れるコンサル</h3>
+          </div>
+          <p>生成AI活用を“語る”だけでなく、プロトタイプを“作って”検証。要求の本質を短時間であぶり出し、最短距離で設計します。</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact-section">
-  <div class="section-label reveal">● Contact</div>
-  <h2 class="section-title reveal">お問い合わせ</h2>
-  <p class="section-desc reveal" style="text-align:center;">
-    プロダクトに関するご質問、爆速開発のご相談など、お気軽にお問い合わせください。
-  </p>
-  <a href="mailto:erik.arthur.com@gmail.com" class="contact-email reveal">erik.arthur.com@gmail.com</a>
-</section>
+  <section id="roots" class="section">
+    <div class="wrap">
+      <div class="kicker reveal">Roots</div>
+      <h2 class="h2 reveal">建設が“母語”だから、現場に伝わる</h2>
+      <p class="lead reveal">
+        実家が小さな工務店で、幼い頃から不動産屋さんや大工さんと一緒に育った感覚があります。
+        親族にも建設に携わる人が多く、建設を“日常語”として理解しています。
+        学生時代には家業を手伝いながら宅地建物取引士を取得しました。
+      </p>
 
-<!-- FOOTER -->
+      <div class="grid-2">
+        <div class="feature reveal">
+          <div class="top"><div class="badge" aria-hidden="true">🧱</div><h3>現場のリアルを知っている</h3></div>
+          <p>
+            机上の理想ではなく、現場の制約（人・段取り・安全・天候・職人ネットワーク）を前提に設計します。
+            「なぜ回らないか」を現場の言葉で分解し、関係者の納得を取りにいきます。
+          </p>
+        </div>
+
+        <div class="feature reveal">
+          <div class="top"><div class="badge" aria-hidden="true">🏠</div><h3>不動産・建設の視点を持つIT</h3></div>
+          <p>
+            IT・会計の視点に、建設側の感覚を足して“翻訳”できます。
+            だからこそ、要件定義が速く、無駄なカスタマイズや誤解を減らせます。
+          </p>
+        </div>
+      </div>
+
+      <div class="hint reveal" style="margin-top:16px">
+        ※ 現職の就業規定と守秘義務に配慮し、特定につながる社名・案件名・期間・金額・表彰名などは掲載していません。
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WORK / ACHIEVEMENTS -->
+  
+  <section id="work" class="section">
+    <div class="wrap">
+      <div class="kicker reveal">Selected proof</div>
+      <h2 class="h2 reveal">実績（表現を一般化しています）</h2>
+      <p class="lead reveal">
+        守秘義務・就業規定の都合で、社名・案件名・期間・金額などは非開示です。
+        その代わり、再現性のある「やり方」と「成果の型」を中心に記載しています。
+      </p>
+
+      <div class="grid-2">
+        <div class="feature reveal">
+          <div class="top">
+            <div class="badge" aria-hidden="true">📈</div>
+            <h3>建設DX事業の立ち上げ・拡大</h3>
+          </div>
+          <p>
+            立ち上げ期の事業を、複数の収益軸に分散しながら拡大。
+            組織を領域別に編成し、PL視点で自走する運営（パイプライン/粗利/投資対効果）へ移行。
+          </p>
+        </div>
+
+        <div class="feature reveal">
+          <div class="top">
+            <div class="badge" aria-hidden="true">🧩</div>
+            <h3>会計×業務のプロダクト/基盤づくり</h3>
+          </div>
+          <p>
+            会計・管理会計領域で、企画・開発・運用の一気通貫を経験。
+            意思決定と開発の分断をほどき、品質/満足度を上げる仕組みへ再設計。
+          </p>
+        </div>
+
+        <div class="feature reveal">
+          <div class="top">
+            <div class="badge" aria-hidden="true">🌏</div>
+            <h3>グローバル案件の推進</h3>
+          </div>
+          <p>
+            多国籍チーム/複数拠点での合意形成、要件整理、デリバリーを推進。
+            文化・言語・距離の壁を越えて、前に進む運営をつくります。
+          </p>
+        </div>
+
+        <div class="feature reveal">
+          <div class="top">
+            <div class="badge" aria-hidden="true">⚙️</div>
+            <h3>自動化・生成AIの“実装”</h3>
+          </div>
+          <p>
+            RPA/自動化の導入支援から、運用・教育・ガバナンスまで整備。
+            生成AIは「検証できるプロトタイプ」を短期間で作り、要求の本質を早期に確定させます。
+            （特許取得経験あり）
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="wrap">
+      <div class="kicker reveal">Services</div>
+      <h2 class="h2 reveal">提供サービス</h2>
+      <p class="lead reveal">
+        “資料だけ”で終わらせないために、最初から <b>実装・運用</b> を含めた設計で進めます。
+      </p>
+
+      <div class="offer reveal">
+        <h3>⚡ 短期で前進させる「PoC→本番」伴走</h3>
+        <div class="price">2週間〜 / 目的に合わせて個別設計</div>
+        <p class="note">
+          まずは「何を意思決定できるようにするか」を定義し、最小の仕組みを作って現場で回しながら磨きます。
+          KPI・データ・業務手順・教育まで、一本の導線にします。
+        </p>
+        <div class="flow" aria-label="delivery flow">
+          <div class="step">
+            <div class="d">WEEK 1</div>
+            <div class="l">構造化</div>
+            <div class="s">課題・KPI・業務を整理し、成功条件を決める</div>
+          </div>
+          <div class="step">
+            <div class="d">WEEK 1-2</div>
+            <div class="l">プロトタイプ</div>
+            <div class="s">動くものを作り、意思決定と現場検証を開始</div>
+          </div>
+          <div class="step">
+            <div class="d">WEEK 2-4</div>
+            <div class="l">実装</div>
+            <div class="s">データ連携・運用設計・教育まで含めて整える</div>
+          </div>
+          <div class="step">
+            <div class="d">ONGOING</div>
+            <div class="l">定着</div>
+            <div class="s">KPI運営・改善サイクルを回せる体制へ</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="height:16px"></div>
+
+      <div class="grid-2">
+        <div class="feature reveal">
+          <div class="top">
+            <div class="badge" aria-hidden="true">🏗️</div>
+            <h3>建設業DXコンサルティング</h3>
+          </div>
+          <p>業務診断、DXロードマップ、BIM/基幹刷新、KPI可視化、教育プログラムまで一貫支援。</p>
+        </div>
+        <div class="feature reveal">
+          <div class="top">
+            <div class="badge" aria-hidden="true">📊</div>
+            <h3>会計・管理会計×データ基盤</h3>
+          </div>
+          <p>PL設計、収益性分析、連結・管理会計の要件整理、データモデル設計、BIの運用設計。</p>
+        </div>
+        <div class="feature reveal">
+          <div class="top">
+            <div class="badge" aria-hidden="true">🤖</div>
+            <h3>生成AI活用・業務自動化</h3>
+          </div>
+          <p>社内文書/提案書/業務フローの生成AI活用、RPA移行・自動テスト、AIエージェントの業務適用。</p>
+        </div>
+        <div class="feature reveal">
+          <div class="top">
+            <div class="badge" aria-hidden="true">🧪</div>
+            <h3>プロダクト/新規事業 0→1</h3>
+          </div>
+          <p>企画・要件・UI/UX・プロトタイプ開発まで。検証を速く回し、投資判断できる状態へ。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER -->
+  
+  <section id="career" class="section">
+    <div class="wrap">
+      <div class="kicker reveal">Career</div>
+      <h2 class="h2 reveal">経歴（社名・詳細は非開示）</h2>
+      <p class="lead reveal">
+        「事業づくり」と「製品づくり」を両方経験。企画・実装・運用を一気通貫で扱えます。
+      </p>
+
+      <div class="timeline">
+        <div class="titem reveal">
+          <div class="twhen">現在</div>
+          <div class="tmain">
+            <h4>建設DX領域｜事業構築・組織化</h4>
+            <p>建設DX領域で事業を立ち上げ、拡大フェーズの設計（収益軸/体制/パイプライン運営）まで推進。</p>
+            <div class="tags">
+              <span class="pill">事業立ち上げ</span><span class="pill">PL運営</span><span class="pill">建設DX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="titem reveal">
+          <div class="twhen">近年</div>
+          <div class="tmain">
+            <h4>総合コンサル領域｜DX構想・実行</h4>
+            <p>DX構想策定、業務整理、システム化、定着支援。新規開拓やタスクフォース参画も経験。</p>
+            <div class="tags">
+              <span class="pill">DX構想</span><span class="pill">要件整理</span><span class="pill">PMO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="titem reveal">
+          <div class="twhen">それ以前</div>
+          <div class="tmain">
+            <h4>グローバルIT/製品開発｜会計・海外・自動化</h4>
+            <p>会計領域のプロダクト/基盤、海外事業推進、RPA/自動化の立ち上げなどを担当。</p>
+            <div class="tags">
+              <span class="pill">製品企画・開発</span><span class="pill">グローバル</span><span class="pill">自動化</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="height:18px"></div>
+
+      <div class="grid-2">
+        <div class="feature reveal">
+          <div class="top"><div class="badge" aria-hidden="true">📜</div><h3>知財・出版</h3></div>
+          <p>ビジネス特許の取得経験。AI×社会シナリオ・働き方などをテーマに、Kindle等で多数出版。</p>
+        </div>
+        <div class="feature reveal">
+          <div class="top"><div class="badge" aria-hidden="true">🧰</div><h3>個人開発（抜粋）</h3></div>
+          <p>Next.js / Android(Kotlin) / Python によるプロトタイプ開発。コンサル業務の効率化ツールや健康管理アプリ等を開発。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="wrap">
+      <div class="kicker reveal">Contact</div>
+      <h2 class="h2 reveal">ご相談・お問い合わせ</h2>
+      <p class="lead reveal" style="margin-left:auto;margin-right:auto;">
+        「まずは短期で“動くもの”を作り、意思決定できる状態にしたい」<br>「会計×現場×ITのねじれを解消したい」など、お気軽にご連絡ください。<br>※ 守秘義務・就業規定に配慮し、やり取りは一般論/公開可能情報の範囲から開始します。
+      </p>
+
+      <a class="mail reveal" href="mailto:erik.arthur.com@gmail.com?subject=お問い合わせ（瀬田博之サイト）">
+        <span aria-hidden="true">✉</span>
+        <span>erik.arthur.com@gmail.com</span>
+        <small>Click to mail</small>
+      </a>
+
+      <div style="height:10px"></div>
+      <div class="lead reveal" style="font-size:13px; max-width:72ch; margin-left:auto;margin-right:auto;">
+        返信目安：1〜2営業日。
+      </div>
+    </div>
+  </section>
+</main>
+
 <footer>
-  <p>© 2025 Harmonic Insight / 瀬田 博之（Erik Arthur）. All rights reserved.</p>
-  <p style="margin-top:0.5rem;">〒162-0803 東京都新宿区赤城下町63-5</p>
+  <div class="wrap">
+    <div class="frow">
+      <div>© <span id="y"></span> Hiroyuki Seta / Erik Arthur. All rights reserved.</div>
+      <div style="display:flex; gap:18px; align-items:center; flex-wrap:wrap;">
+        <a href="https://h-insight.jp" target="_blank" rel="noopener" style="color:var(--accent); font-family:var(--font-display); font-weight:700; font-size:12px; letter-spacing:.03em;">Harmonic Insight →</a>
+        <span class="legal">Built for speed & trust.</span>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<!-- SCROLL REVEAL -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  // Year
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-});
+  // Theme toggle with persistence
+  const key = 'hs-theme';
+  const root = document.documentElement;
+  const saved = localStorage.getItem(key);
+  if(saved){ root.setAttribute('data-theme', saved); }
+
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    const cur = root.getAttribute('data-theme') || 'dark';
+    const next = (cur === 'light') ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem(key, next);
+  });
+
+  // Mobile drawer
+  const drawer = document.getElementById('drawer');
+  const openBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeDrawer');
+
+  function openDrawer(){
+    drawer.classList.add('in');
+    drawer.setAttribute('aria-hidden', 'false');
+  }
+  function closeDrawer(){
+    drawer.classList.remove('in');
+    drawer.setAttribute('aria-hidden', 'true');
+  }
+  if(openBtn){
+    openBtn.addEventListener('click', openDrawer);
+    drawer.addEventListener('click', (e) => { if(e.target === drawer) closeDrawer(); });
+    closeBtn.addEventListener('click', (e) => { e.preventDefault(); closeDrawer(); });
+    drawer.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', closeDrawer));
+  }
+
+  // Reveal on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if(en.isIntersecting) en.target.classList.add('in'); });
+  }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
-
 </body>
 </html>
